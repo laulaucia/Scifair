@@ -1,0 +1,29 @@
+{
+  "name": "scifair",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "ejs": "^2.3.4",
+    "mongod": "^1.3.0",
+    "mongoose": "^4.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laulaucia/Scifair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laulaucia/Scifair/issues"
+  },
+  "homepage": "https://github.com/laulaucia/Scifair#readme"
+}
