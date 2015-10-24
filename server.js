@@ -3,6 +3,7 @@ var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
   bcrypt = require('bcrypt'),
+  expressSession = require('express-session'),
   mongoose = require('mongoose');
 
 // middleware
@@ -23,6 +24,4 @@ app.get('/login', function (req, res) {
 });
 
 // listen on port 3000
-app.listen(3000, function () {
-  console.log(process.env.PORT || 3000);
-});
+app.listen(process.env.PORT || 3000);
