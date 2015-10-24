@@ -9,7 +9,7 @@ var express = require('express'),
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect('mongodb://localhost/simple-login');
+mongoose.connect('mongodb://localhost/scifair');
 
 
 // home route rendering index
@@ -24,5 +24,5 @@ app.get('/login', function (req, res) {
 
 // listen on port 3000
 app.listen(3000, function () {
-  console.log('server started on locahost:3000');
+  console.log(process.env.PORT || 3000);
 });
