@@ -14,3 +14,7 @@ var FairSchema = new Schema({
 	startDate: String,
 	coordinates: String, 
 });
+
+var Fair = mongoose.model("Fair", FairSchema);
+
+module.exports.Fair = Fair;
