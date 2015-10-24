@@ -4,8 +4,9 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   bcrypt = require('bcrypt'),
   expressSession = require('express-session'),
-  mongoose = require('mongoose'),
-  fairsJson = require('/seeds/fairs');
+  mongoose = require('mongoose');
+// fair data for the db
+var fairsJson = require('/seeds/fairs');
 
 // middleware
 app.use(express.static('public'));
