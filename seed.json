@@ -1,0 +1,5 @@
+{
+	"undefined": 'localhost/scifair',
+	"dev": 'localhost/scifair',
+	"prod": 'localhost/scifair'
+}
