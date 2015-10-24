@@ -12,8 +12,8 @@
 <!-- BEGIN # BOOTSNIP INFO -->
 <div class="container">
 	<div class="row">
-		<h1 class="text-center">Modal Login with jQuery Effects</h1>
-        <p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Open Login Modal</a></p>
+		<h1 class="text-center">Search for a science fair near you!</h1>
+        <p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#findafair">Find a fair</a></p>
 	</div>
 </div>
 <!-- END # BOOTSNIP INFO -->
@@ -33,21 +33,22 @@
                 <div id="div-forms">
                 
                     <!-- Begin # Login Form -->
-                    <form id="login-form">
+                    <div class="search-form">
 		                <div class="modal-body">
 				    		<div id="div-login-msg">
                                 <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                
+                        <form id='search-form'>  
+                        <span id="text-login-msg">Search for a fair by state or country</span>
+                        	<input id="search-by-state" class="form-control" type="text" placeholder="State" > 
+                        	<input id="search-by-country" class="form-control" type="text" placeholder="country" >     
                            
         		    	</div>
 				        <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                <button id="searchsubmit"type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
                             </div>
-				    	    <div>
-                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-                            </div>
+                        </form> 
+				    	    
 				        </div>
                     </form>
                     <!-- End # Login Form -->
