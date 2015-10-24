@@ -19,15 +19,15 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-// Route with placeholder to results page
-app.get('/results', function(req, res){
-	red.send("this page will have results rendered on a map");
+// Route with placeholder to map results page
+app.get('/map', function(req, res){
+	red.render('map');
 });
 
 
 // dashboard route with placeholder response
 app.get('/dashboard', function (req, res) {
-  res.send('dashboard coming soon');
+  res.render('dashboard');
 });
 
 // listen on port 3000
