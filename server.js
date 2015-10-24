@@ -10,7 +10,7 @@ var express = require('express'),
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect('mongodb://localhost/scifair');
+//mongoose.connect('mongodb://localhost/scifair');
 
 
 // home route rendering index
