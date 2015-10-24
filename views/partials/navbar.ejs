@@ -23,12 +23,15 @@
         <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+          <ul class="dropdown-menu loginform">
+            <span id="text-login-msg">Type your username and password.</span>
+             <form id="login-form">
+                <input id="login_username" class="form-control" type="text" placeholder="Username" required>
+                <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                <div class="checkbox">
+                  <label><input type="checkbox"> Remember me</label>
+                </div>
+            </form>
           </ul>
         </li>
       </ul>
