@@ -5,7 +5,7 @@ var express = require('express'),
   bcrypt = require('bcrypt'),
   expressSession = require('express-session'),
   mongoose = require('mongoose'),
-  fairsJson = require('/seeds/fairs.json');
+  fairsJson = require('/seeds/fairs');
 
 // middleware
 app.use(express.static('public'));
