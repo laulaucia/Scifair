@@ -6,7 +6,7 @@ var express = require('express'),
   expressSession = require('express-session'),
   mongoose = require('mongoose');
 // fair data for the db
-var fairsJson = require('fairs');
+//var fairsJson = require('fairs');
 
 // middleware
 app.use(express.static('public'));
