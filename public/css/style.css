@@ -1,4 +1,21 @@
-/* footer styles */
+
+
+h1 {
+     font-size: 3em;
+     text-align: center;
+}
+
+.navbar-default .navbar-nav > li.dropdown:hover > a, 
+.navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.navbar-default .navbar-nav > li.dropdown:hover > a:focus {
+    background-color: transparent;
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+/* ------- footer styles ---------------*/
 
 .social:hover {
      -webkit-transform: scale(1.1);
@@ -26,8 +43,8 @@
  #social-tw:hover {
      color: #4099FF;
  }
- #social-gp:hover {
-     color: #d34836;
+ #social-ig:hover {
+     color: #3f729b;
  }
  #social-em:hover {
      color: #f39c12;
