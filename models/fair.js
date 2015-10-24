@@ -1,6 +1,6 @@
 // require dependencies
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
+  Schema = mongoose.Schema;
 
 //define fair schema
 var FairSchema = new Schema({
