@@ -45,7 +45,7 @@ html, body, #map {
     width: 350px;
 }
 
-#login-modal input[type=text], input[type=password] {
+#findafair input[type=text], input[type=text] {
      margin-top: 10px;
 }
 
