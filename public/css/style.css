@@ -114,8 +114,9 @@ html, body, #map {
 }
 
 .modal-content {
+     background-color: transparent;
     border-radius: 0px;
-    outline: 0;
+    
 }
 
 .modal-header {
