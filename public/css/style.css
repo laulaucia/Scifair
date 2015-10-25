@@ -96,6 +96,13 @@ html, body, #map {
     background-color: #eb575b !important;
 }
 
+#text-login-msg{
+     padding: 10px;
+     text-align: center;
+     font-size: 2em;
+     font-weight: bold;
+     color: #ddd;
+}
 
 /* #########################################
    #    override the bootstrap configs     #
@@ -107,8 +114,6 @@ html, body, #map {
 }
 
 .modal-content {
-    background-color: #ececec;
-    border: 1px solid #bdc3c7;
     border-radius: 0px;
     outline: 0;
 }
@@ -126,6 +131,7 @@ html, body, #map {
 }
 
 .modal-footer {
+     min-height: 16.43px;
     padding: 15px 15px 15px 15px;
     text-align: left;
     border-top: 0px;
