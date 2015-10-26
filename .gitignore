@@ -1,4 +1,4 @@
 .env
 node_modules
-seeds
 models/fairsnoquotes.json
+views/partials/head.ejs

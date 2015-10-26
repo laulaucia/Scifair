@@ -22,6 +22,14 @@ html, body, #map {
   padding: 0;
 }
 
+#map{
+     border-style: outset;
+     height: 500px;
+     margin: auto;
+     padding: 0;
+     width: 100%;
+}
+
 /*-------- search styles (currently a login modal)*/
 
 
