@@ -52,7 +52,7 @@ html, body, #map {
 #div-login-msg,
 #div-lost-msg,
 #div-register-msg {
-    border: 1px solid #dadfe1;
+    
     height: 30px;
     line-height: 28px;
     transition: all ease-in-out 500ms;
@@ -61,14 +61,14 @@ html, body, #map {
 #div-login-msg.success,
 #div-lost-msg.success,
 #div-register-msg.success {
-    border: 1px solid #68c3a3;
+    
     background-color: #c8f7c5;
 }
 
 #div-login-msg.error,
 #div-lost-msg.error,
 #div-register-msg.error {
-    border: 1px solid #eb575b;
+    
     background-color: #ffcad1;
 }
 
