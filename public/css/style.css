@@ -114,7 +114,7 @@ html, body, #map {
 }
 
 .modal-content {
-     background-color: #ddd;
+     background-color: transparent;
     border-radius: 0px;
     
 }

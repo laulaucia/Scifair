@@ -5730,4 +5730,3 @@ for (var i=0; i < allFairs.length; i ++){
     });
 };
 
-module.exports = allFairs;
