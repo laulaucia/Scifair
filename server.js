@@ -3,8 +3,8 @@ var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
   bcrypt = require('bcrypt'),
-  expressSession = require('express-session'),
-  mongoose = require('mongoose');
+  mongoose = require('mongoose'),
+  session = require('express-session');
 // fair data for the db
 //var fairsJson = require('fairs');
 
