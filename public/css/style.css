@@ -96,6 +96,13 @@ html, body, #map {
     background-color: #eb575b !important;
 }
 
+#logintext{
+     padding: 10px;
+     text-align: center;
+     font-size: 1.1em;
+     font-weight: bold;
+}
+
 #text-login-msg{
      padding: 10px;
      text-align: center;
