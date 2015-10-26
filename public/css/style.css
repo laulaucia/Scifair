@@ -13,6 +13,7 @@ h1 {
 }
 li.dropdown:hover > .dropdown-menu {
     display: block;
+    padding: 5px;
 }
 
 
@@ -22,12 +23,14 @@ html, body, #map {
   padding: 0;
 }
 
+.map-container{
+     text-align: center;
+
+}
 #map{
-     border-style: outset;
-     height: 500px;
-     margin: auto;
+     height: 100%;
      padding: 0;
-     width: 100%;
+    
 }
 
 /*-------- search styles (currently a login modal)*/
@@ -114,7 +117,7 @@ html, body, #map {
 #text-login-msg{
      padding: 10px;
      text-align: center;
-     font-size: 2em;
+     font-size: 2.5em;
      font-weight: bold;
      color: #ddd;
 }
@@ -131,10 +134,7 @@ html, body, #map {
 .modal-content {
      background-color: transparent;
     border-radius: 0px;
-    height:400px;
-    width: 350px;
-
-    
+    height:100%; 
 }
 
 .modal-header {
@@ -146,7 +146,7 @@ html, body, #map {
 .modal-body {
     position: relative;
     padding: 5px 15px 5px 15px;
-    margin-top: 40px;
+    margin-top: 30%;
 }
 
 .modal-footer {
