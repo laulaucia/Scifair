@@ -12,6 +12,7 @@ var FairSchema = new Schema({
 	website: String,
 	affiliations:[String],
 	startDate: String,
+	endDate: String,
 	coordinates: String, 
 });
 
