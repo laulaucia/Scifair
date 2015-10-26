@@ -15,6 +15,9 @@ var FairSchema = new Schema({
 	coordinates: String, 
 });
 
+// define fair model
 var Fair = mongoose.model("Fair", FairSchema);
-
+// exports fair model - not sure whether to use .fair or not
 module.exports.Fair = Fair;
+
+
