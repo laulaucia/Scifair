@@ -131,11 +131,12 @@ html, body, #map {
 .modal-content {
      background-color: transparent;
     border-radius: 0px;
+    height:400px
     
 }
 
 .modal-header {
-    min-height: 16.43px;
+    /* min-height: 16.43px;  */
     padding: 15px 15px 15px 15px;
     border-bottom: 0px;
 }
@@ -147,7 +148,7 @@ html, body, #map {
 }
 
 .modal-footer {
-     min-height: 16.43px;
+    /* min-height: 16.43px;*/
     padding: 15px 15px 15px 15px;
     text-align: left;
     border-top: 0px;
