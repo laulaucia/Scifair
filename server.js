@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 // commenting this out helped heroku work? not sure why though
-mongoose.connect('mongodb://localhost/scifair');
+//mongoose.connect('mongodb://localhost/scifair');
 
 
 
