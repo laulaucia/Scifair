@@ -17,8 +17,8 @@ app.use(session({
 	resave: true,
 	secret: 'SuperSecretCookie',
   	cookie: { maxAge: 30 * 60 * 1000 }
-}
-});
+}));
+
 
 // commenting this out helped heroku work? not sure why though
 //mongoose.connect('mongodb://localhost/scifair');
