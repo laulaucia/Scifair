@@ -18,7 +18,7 @@ var map;
 //    #
 //    ##################################################################### */
    
-// $(function() {
+ $(function() {
     
 //     var $formLogin = $('#login-form');
 //     var $formLost = $('#lost-form');
@@ -102,5 +102,5 @@ var map;
             $iconTag.addClass("glyphicon-chevron-right");
             $iconTag.removeClass($iconClass + " " + $divClass);
   		}, $msgShowTime);
-    }
+  }
 });
