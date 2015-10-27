@@ -22,7 +22,8 @@ app.use(session({
 // commenting this out helped heroku work? not sure why though
 //mongoose.connect('mongodb://localhost/scifair');
 
-// creating  a user ///
+
+////////////////////////////////// creating  a user /////////////////////////////////////
 app.post('/users', function (req, res) {
   console.log(req.body);
   User.createSecure(req.body.email, req.body.password, function (err, newUser) {
@@ -68,6 +69,7 @@ app.get('/logout', function (req, res) {
   // redirect to main page (for now)
   res.redirect('/');
 });
+////////////////////////////////////////////route rendering///////////////////////////////////
 
 // home route rendering index
 app.get('/', function (req, res) {

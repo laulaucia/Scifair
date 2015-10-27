@@ -1,17 +1,16 @@
-
-    var map;
- function initMap(){
- map = new google.maps.Map(document.getElementById('map'), {
-    	center: {lat: 37.783, lng: -122.4167},
-    	zoom: 3
-  	});
-}
-
-///// user JS
-
 console.log('sanity check: client-side js loaded');
+var map;
+var initMap = function(){
+ map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.783, lng: -122.4167},
+        zoom: 3
+    });
+};
 
 $(document).ready(function() {
+
+/////////////////////////// user JS ///////////////////////////////
+
   $('#signup-form').on('submit', function(e) {
     e.preventDefault();
 
@@ -39,9 +38,14 @@ $(document).ready(function() {
 
 });
 
+////////////////////search modal search///////////////////////////
 
 
-//on click of search results button 
+//on click of search results button prevent default
+ $('#search-form').on('submit', function(e) {
+    e.preventDefault();
+    var searchdata =$(this).serialize();
+    console.log(searchdata);});
 // prevent default
 // find the data from the form and serialize it and console log to check the right data
 // write an ajax post request the from the serialized data 

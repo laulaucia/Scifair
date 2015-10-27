@@ -20,13 +20,13 @@ li.dropdown:hover > .dropdown-menu {
 
 
  #map {
-  height: 70%;
-  width: 100%;
-  margin: 0;
+    border-syle: outset;
+  height: 500px;
+  margin: auto;
   padding: 0;
 }
 
-html, body { height: 100%; margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; }
 
 
 }
