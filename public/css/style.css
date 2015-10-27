@@ -3,6 +3,7 @@
 h1 {
      font-size: 3em;
      text-align: center;
+     padding-bottom: 10px;
 }
 
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
@@ -10,6 +11,7 @@ h1 {
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
     background-color: transparent;
     color: rgb(85, 85, 85);
+
 }
 li.dropdown:hover > .dropdown-menu {
     display: block;
@@ -17,14 +19,15 @@ li.dropdown:hover > .dropdown-menu {
 }
 
 
-html, body, #map {
-  height: 100%;
+ #map {
+  height: 70%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.map-container{
-     text-align: center;
+html, body { height: 100%; margin: 0; padding: 0; }
+
 
 }
 #map{

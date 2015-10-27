@@ -1,15 +1,59 @@
-var map;
- $(document).ready(function(){
 
+    var map;
  function initMap(){
  map = new google.maps.Map(document.getElementById('map'), {
     	center: {lat: 37.783, lng: -122.4167},
     	zoom: 3
   	});
 }
+
+///// user JS
+
+console.log('sanity check: client-side js loaded');
+
+$(document).ready(function() {
+  $('#signup-form').on('submit', function(e) {
+    e.preventDefault();
+
+    // select the form and serialize its data
+    var signupData = $("#signup-form").serialize();
+    console.log(signupData);
+    // send POST request to /users with the form data
+    $.post('/users', signupData, function(response) {
+      console.log(response);
+    });
+  });
+
+  $('#login-form').on('submit', function(e) {
+    e.preventDefault();
+
+    // select the form and serialize its data
+    // note: this is the form because the event handler
+    //   was triggered from the form
+    var loginData = $(this).serialize();
+    // send POST request to /login with the form data
+    $.post('/login', loginData, function(response) {
+      console.log(response);
+    });
+  });
+
 });
 
- initMap();
+
+
+//on click of search results button 
+// prevent default
+// find the data from the form and serialize it and console log to check the right data
+// write an ajax post request the from the serialized data 
+// then i'd go to the server and write a post server side route
+//app.post same url and req res
+//console log req.body - make varables  for city and state and then query the db
+// db.fair.find({city:var}, f
+// res.json(cities)
+//window.location.href('/maps')
+
+
+
 
 
 // /* #####################################################################

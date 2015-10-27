@@ -2,4 +2,6 @@
                       process.env.MONGOHQ_URL || 
                       'mongodb://localhost/scifair' );
 
- module.exports = require('./fair');
+ module.exports.Fair = require('./fair');
+
+ module.exports.User = require('./user');

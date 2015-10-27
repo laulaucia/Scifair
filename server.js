@@ -22,7 +22,7 @@ app.use(session({
 // commenting this out helped heroku work? not sure why though
 //mongoose.connect('mongodb://localhost/scifair');
 
-// create a user 
+// creating  a user ///
 app.post('/users', function (req, res) {
   console.log(req.body);
   User.createSecure(req.body.email, req.body.password, function (err, newUser) {
@@ -41,24 +41,46 @@ app.post('/sessions', function (req, res) {
     } else {
       console.log('setting sesstion user id ', loggedInUser._id);
       req.session.userId = loggedInUser._id;
-      res.redirect('/profile');
+      res.redirect('/dashboard');
     }
   });
 });
 
+// show user dashboard page
+app.get('/dashboard', function (req, res) {
+  console.log('session user id: ', req.session.userId);
+  // find the user currently logged in
+  User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    if (err){
+      console.log('database error: ', err);
+      res.redirect('/');
+    } else {
+      // render profile template with user's data
+      console.log('loading profile of logged in user');
+      res.render('dashboard', {user: currentUser});
+    }
+  });
+});
+
+app.get('/logout', function (req, res) {
+  // remove the session user id
+  req.session.userId = null;
+  // redirect to main page (for now)
+  res.redirect('/');
+});
 
 // home route rendering index
 app.get('/', function (req, res) {
   res.render('index');
 });
 
-// Route with placeholder to map results page
+// Route to map results page
 app.get('/map', function(req, res){
 	res.render('map');
 });
 
 
-// dashboard route with placeholder response
+// route to dashboard for editing
 app.get('/dashboard', function (req, res) {
   res.render('dashboard');
 });

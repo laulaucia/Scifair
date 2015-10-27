@@ -19,6 +19,6 @@ var FairSchema = new Schema({
 // define fair model
 var Fair = mongoose.model("Fair", FairSchema);
 // exports fair model - not sure whether to use .fair or not
-module.exports.Fair = Fair;
+module.exports = Fair;
 
 
