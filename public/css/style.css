@@ -20,21 +20,14 @@ li.dropdown:hover > .dropdown-menu {
 
 
  #map {
-    border-syle: outset;
-  height: 500px;
-  margin: auto;
-  padding: 0;
+  position: relative;  
+  height: 250px;
+  margin-right: 20px;
+  
 }
 
 html, body { margin: 0; padding: 0; }
 
-
-}
-#map{
-     height: 100%;
-     padding: 0;
-    
-}
 
 /*-------- search styles (currently a login modal)*/
 
@@ -117,10 +110,15 @@ html, body { margin: 0; padding: 0; }
      font-weight: bold;
 }
 
+.modallabels{
+    color: #ddd;
+    margin-bottom: -10px;
+}
+
 #text-login-msg{
-     padding: 10px;
+     padding: 5px;
      text-align: center;
-     font-size: 2.5em;
+     font-size: 2em;
      font-weight: bold;
      color: #ddd;
 }

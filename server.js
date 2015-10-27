@@ -3,7 +3,18 @@ var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
-  session = require('express-session');
+  session = require('express-session'),
+  request = require('request');
+
+// request.debug = true;
+
+
+// var requestOptions= {};
+
+// request.get(requestOptions, funtion(error, apiResponse, body){
+//   console.log(apiResponse);
+// });
+
 // fair data for the db
 //var fairsJson = require('fairs');
 
