@@ -13,7 +13,8 @@ var FairSchema = new Schema({
 	affiliations:[String],
 	startDate: String,
 	endDate: String,
-	coordinates: String, 
+	longitude: String,
+	latitude: String 
 });
 
 // define fair model

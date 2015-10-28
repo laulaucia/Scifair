@@ -3,13 +3,45 @@
 console.log('sanity check: client-side js loaded');
 var map;
 var initMap = function(){
- map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 37.783, lng: -122.4167},
         zoom: 5
     });
 };
 
 $(document).ready(function() {
+
+// var searchResults =
+
+// $.getJSON( searchResults, function( fair ) {
+//         var items = [];
+//         $.each( data.features, function(key, val) {
+
+//             items.push( "<li id='" + key + "'>" + val.properties.title + "</br> - " + timeSinceQuake +"</li>");
+            
+//             var geometryData = val.geometry.coordinates;
+//             var coordinates = {lat:geometryData[1], lng: geometryData[0]};
+
+//             var newMarker = new google.maps.Marker({
+//                 position: coordinates,
+//                 map: map,
+//                 title: val.properties.title.toString(),
+//                 icon: image
+//             });
+            
+//             }
+            
+//         );
+//         $( "<ul/>", {
+//         "id": "geoquakes",
+//         html: items.join( "" )
+//     }).appendTo( "#info" );
+    
+// });  
+
+
+
+
 
 /////////////////////////// user JS ///////////////////////////////
 

@@ -24,8 +24,7 @@ html, body {
 }
 
  #map {
-  position: inherit;
-  float: left;  
+  position:static;
   height: 250px;
   margin-right: 20px;
   

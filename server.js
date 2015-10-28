@@ -52,7 +52,7 @@ app.post('/sessions', function (req, res) {
 
 
 // THE FAIRS THAT COME OUT OF SEARCH!! 
-//XDZvar foundfairs = [];
+//var foundfairs = [];
 
 // search route for state and country
 app.post('/search', function(req,res){
@@ -61,12 +61,24 @@ app.post('/search', function(req,res){
     if(err){
       console.log("we have an error");
     }
-    var foundfairs = fairs;
-    console.log(foundfairs);
-    res.render('map', {foundfairs: foundfairs});
+    console.log(fairs);
+    res.render('map', {foundfairs: fairs, search: req.body });
   });
 });
  
+app.get('/search', function(req, res){
+  db.Fair.find(req.body, function(err, fairs){
+    if(err){
+      console.log("we have an error");
+    }
+    console.log(fairs);
+    res.JSON('/api/search', {foundfairs: fairs, search: req.body });
+
+  });
+
+});
+
+
 
 // show user dashboard page
 app.get('/dashboard', function (req, res) {
@@ -83,6 +95,8 @@ app.get('/dashboard', function (req, res) {
     }
   });
 });
+
+
 
 app.get('/logout', function (req, res) {
   // remove the session user id

@@ -1,5 +1,7 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/scifair');
+//var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost/scifair');
+
+var db = require('./index');
 
 var allFairs = [
   {
@@ -5723,11 +5725,10 @@ var allFairs = [
     "endDate":"09-Oct-15"
   }
 ];
-var db = require('./fair.js');
 
 for (var i=0; i < allFairs.length; i ++){
     db.Fair.create(allFairs[i], function (err, fair){
-        console.log(allFairs[i].fairId);
+        console.log(fair._id);
     });
-};
+}
 

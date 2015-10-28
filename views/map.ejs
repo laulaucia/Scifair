@@ -5,12 +5,22 @@
 	</h1>
 <% include ./partials/navbar.ejs %>
 <div class="row">
+	<p> your search was: <%= search.country %> </p>
+
 	<div id="map" class="col-md-6">  
-	
 	</div>
     <div id="info" class="col-md-6">
-    	<h2>Fair Results</h2>  
+    	<h2>Fair Results</h2> 
+    	<%for (var i =0; i<foundfairs.length; i++){ %> 
+     
+     <p>
+     <a href="<%= foundfairs[i].website %>" ><%= foundfairs[i].name %></a></br> 
+  <%= foundfairs[i].fairId %></br> -->
+         <%= foundfairs[i].city %> <%= foundfairs[i].state %> <%= foundfairs[i].country %></br>
+        <%= foundfairs[i].website %></br> 
 	</div>
+	<% } %>
+
 </div>
 <% include ./partials/footer.ejs %>
 </body>
