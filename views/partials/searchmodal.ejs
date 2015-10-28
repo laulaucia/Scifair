@@ -17,7 +17,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                  </button>
-                <form id='search-form' method="POST" action="/search">   
+                <form id='search-form'>   
                   <div class="modal-body">
                     <div id="div-login-msg">
                         <!-- Begin # search Form -->
@@ -27,7 +27,7 @@
                         <label class="modallabels">Enter a state</label>
                         <input id="search-by-state" class="form-control" type="text" placeholder="State" name="state"> 
                         <label class="modallabels">Enter a country</label>
-                        <input id="search-by-country" class="form-control" type="text" placeholder="defaults to United States" name="country" defaultvalue="United States of America" >     
+                        <input id="search-by-country" class="form-control" type="text" placeholder="County *remember to capitalize*" name="country" defaultvalue="United States of America" >     
                         <div class="modal-footer">
                             <div>
                                 <button id="searchsubmit" type="submit" class="btn btn-primary btn-lg btn-block">Search</button>

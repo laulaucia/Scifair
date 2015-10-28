@@ -66,20 +66,19 @@ app.post('/search', function(req,res){
   });
 });
  
-app.get('/search', function(req, res){
-  db.Fair.find(req.body, function(err, fairs){
+app.get('/api/search', function(req, res){
+  console.log(req.query);
+  db.Fair.find(req.query, function(err, fairs){
     if(err){
       console.log("we have an error");
     }
     console.log(fairs);
-    res.JSON('/api/search', {foundfairs: fairs, search: req.body });
+    res.json({foundfairs: fairs, search: req.body });
 
   });
 });
 
-app.post('api/search', function (req, res){
 
-});
 
 
 

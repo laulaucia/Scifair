@@ -11,33 +11,32 @@ var initMap = function(){
 
 $(document).ready(function() {
 
-// var searchResults =
-
-// $.getJSON( searchResults, function( fair ) {
-//         var items = [];
-//         $.each( data.features, function(key, val) {
-
-//             items.push( "<li id='" + key + "'>" + val.properties.title + "</br> - " + timeSinceQuake +"</li>");
+  $('#search-form').on('submit', function(e){
+    e.preventDefault();
+    var serializedsearch = $('#search-form').serialize();
+      $.getJSON( ('/api/search?'+serializedsearch), function( foundfairs ) {
+        var items = [];
+        console.log(foundfairs);
+        $.each( foundfairs, function(key, val){ 
+          for(var i=0; i<foundfairs.length; i++){
+            var coordinates = {lat:foundfairs[i].latitude, lng: foundfairs[i].longitude};
+             var newMarker = new google.maps.Marker({
+                 position: coordinates,
+                 map: map,
+                 title: foundfairs[i].name,
+            });
+            }
+            });
             
-//             var geometryData = val.geometry.coordinates;
-//             var coordinates = {lat:geometryData[1], lng: geometryData[0]};
-
-//             var newMarker = new google.maps.Marker({
-//                 position: coordinates,
-//                 map: map,
-//                 title: val.properties.title.toString(),
-//                 icon: image
-//             });
-            
-//             }
-            
-//         );
-//         $( "<ul/>", {
-//         "id": "geoquakes",
-//         html: items.join( "" )
-//     }).appendTo( "#info" );
+        
+        $( "<ul/>", {
+        "id": "geoquakes",
+        html: items.join( "" )
+    }).appendTo( "#info" );
     
-// });  
+});  
+
+})
 
 
 
