@@ -9,7 +9,7 @@ h1 {
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
 .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
-    background-color: transparent;
+    background-color: #fff;
     color: rgb(85, 85, 85);
 
 }
@@ -27,12 +27,18 @@ html, body {
   position:static;
   height: 250px;
   margin-right: 20px;
+  margin-top: 60px;
   
 }
 
 .info {
     text-align: center;
 
+}
+
+.main-row {
+
+    padding-bottom: 200px;
 }
 
 

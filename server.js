@@ -75,6 +75,9 @@ app.get('/search', function(req, res){
     res.JSON('/api/search', {foundfairs: fairs, search: req.body });
 
   });
+});
+
+app.post('api/search', function (req, res){
 
 });
 

@@ -4,22 +4,32 @@
 	Search results
 	</h1>
 <% include ./partials/navbar.ejs %>
-<div class="row">
-	<p> your search was: <%= search.country %> </p>
 
-	<div id="map" class="col-md-6">  
+
+
+<div class="row main-row">
+	<div id="map" class="col-sm-5 col-sm-offset-1"> 
+
 	</div>
-    <div id="info" class="col-md-6">
-    	<h2>Fair Results</h2> 
+    <div id="info" class="col-md-4">
+    	<h2 class="text-center">Fair Results</h2> 
     	<%for (var i =0; i<foundfairs.length; i++){ %> 
-     
-     <p>
-     <a href="<%= foundfairs[i].website %>" ><%= foundfairs[i].name %></a></br> 
-  <%= foundfairs[i].fairId %></br> -->
-         <%= foundfairs[i].city %> <%= foundfairs[i].state %> <%= foundfairs[i].country %></br>
-        <%= foundfairs[i].website %></br> 
+     	<h5><a href="<%= foundfairs[i].website %>" ><%= foundfairs[i].name %></a></h5> 
+  		<p><%= foundfairs[i].fairId %></br>
+        <%= foundfairs[i].city %> <%= foundfairs[i].state %> <%= foundfairs[i].country %></br>
+        Fair starts: <%= foundfairs[i].startDate %></br> 
+		<% } %>
+		</p>
+		</br>
+		<p class="text-center"> <a href="/" class="btn btn-primary btn-lg " role="button">Find another fair</a></p>
 	</div>
-	<% } %>
+<div class="row">
+	<div class="col-sm-5 col-sm-offset-1">
+		<p> your search was: <%= search.state %> <%= search.country %> </p>
+	</div>
+</div>
+		
+
 
 </div>
 <% include ./partials/footer.ejs %>
