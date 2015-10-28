@@ -7,6 +7,8 @@ var express = require('express'),
   request = require('request'),
   db = require('./models');
 
+
+
 // middleware
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -19,7 +21,11 @@ app.use(session({
 }));
 
 
+
+
 ////////////////////////////////// creating  a user /////////////////////////////////////
+
+
 app.post('/users', function (req, res) {
   console.log(req.body);
   User.createSecure(req.body.email, req.body.password, function (err, newUser) {
@@ -46,7 +52,7 @@ app.post('/sessions', function (req, res) {
 
 
 // THE FAIRS THAT COME OUT OF SEARCH!! 
-var foundfairs = [];
+//XDZvar foundfairs = [];
 
 // search route for state and country
 app.post('/search', function(req,res){
@@ -55,9 +61,9 @@ app.post('/search', function(req,res){
     if(err){
       console.log("we have an error");
     }
-    foundfairs = fairs;
+    var foundfairs = fairs;
     console.log(foundfairs);
-    res.redirect('/map');
+    res.render('map', {foundfairs: foundfairs});
   });
 });
  
@@ -93,7 +99,7 @@ app.get('/', function (req, res) {
 
 // Route to map results page
 app.get('/map', function(req, res){
-  res.render('map', {foundfairs: foundfairs});
+  res.render('map');
 });
 
 app.post('/map', function(req, res){
