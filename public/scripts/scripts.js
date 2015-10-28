@@ -1,3 +1,5 @@
+
+
 console.log('sanity check: client-side js loaded');
 var map;
 var initMap = function(){
@@ -41,11 +43,14 @@ $(document).ready(function() {
 ////////////////////search modal search///////////////////////////
 
 
-//on click of search results button prevent default
- $('#search-form').on('submit', function(e) {
-    e.preventDefault();
-    var searchdata =$(this).serialize();
-    console.log(searchdata);});
+// //on click of search results button prevent default
+//  $('#search-form').on('submit', function(e) {
+//     //serialize data form
+//     var searchdata =$('#search-form').serialize();
+//         console.log(searchdata);
+//     }); 
+
+        //response.redirect('map');
 // prevent default
 // find the data from the form and serialize it and console log to check the right data
 // write an ajax post request the from the serialized data 

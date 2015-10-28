@@ -8,7 +8,7 @@ var userSchema = new Schema({
   passwordDigest: String
 });
 
-serSchema.statics.createSecure = function (email, password, callback) {
+userSchema.statics.createSecure = function (email, password, callback) {
   // `this` references our User model
   // store it in variable `UserModel` because `this` changes context in nested callbacks
 

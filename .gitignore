@@ -1,5 +1,5 @@
 .env
 node_modules
 models/fairsnoquotes.json
-views/partials/head.ejs
 views/partial/footer.ejs
+views/partial/mapheader.ejs

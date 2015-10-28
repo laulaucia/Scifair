@@ -20,7 +20,7 @@ li.dropdown:hover > .dropdown-menu {
 
 
  #map {
-  position: relative;  
+  position: inherit;  
   height: 250px;
   margin-right: 20px;
   

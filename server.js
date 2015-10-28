@@ -4,19 +4,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
   session = require('express-session'),
-  request = require('request');
-
-// request.debug = true;
-
-
-// var requestOptions= {};
-
-// request.get(requestOptions, funtion(error, apiResponse, body){
-//   console.log(apiResponse);
-// });
-
-// fair data for the db
-//var fairsJson = require('fairs');
+  request = require('request'),
+  db = require('./models');
 
 // middleware
 app.use(express.static('public'));
@@ -28,10 +17,6 @@ app.use(session({
 	secret: 'SuperSecretCookie',
   	cookie: { maxAge: 30 * 60 * 1000 }
 }));
-
-
-// commenting this out helped heroku work? not sure why though
-//mongoose.connect('mongodb://localhost/scifair');
 
 
 ////////////////////////////////// creating  a user /////////////////////////////////////
@@ -57,6 +42,25 @@ app.post('/sessions', function (req, res) {
     }
   });
 });
+
+
+
+// THE FAIRS THAT COME OUT OF SEARCH!! 
+var foundfairs = [];
+
+// search route for state and country
+app.post('/search', function(req,res){
+  console.log(req.body);
+  db.Fair.find(req.body, function(err, fairs){
+    if(err){
+      console.log("we have an error");
+    }
+    foundfairs = fairs;
+    console.log(foundfairs);
+    res.redirect('/map');
+  });
+});
+ 
 
 // show user dashboard page
 app.get('/dashboard', function (req, res) {
@@ -89,7 +93,11 @@ app.get('/', function (req, res) {
 
 // Route to map results page
 app.get('/map', function(req, res){
-	res.render('map');
+  res.render('map', {foundfairs: foundfairs});
+});
+
+app.post('/map', function(req, res){
+  res.render('map');
 });
 
 
