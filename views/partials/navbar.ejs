@@ -20,12 +20,17 @@
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="./dashboard">Dashboard</a></li>    
+      <% if (user){%>
+        <li><a href="./dashboard">Dashboard</a></li> 
+        <li><a href="./logout">Logout</a></li>
+        <% } %> 
+
+        <% if (!user){ %>  
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create an account <b class="caret"></b></a>
           <ul class="dropdown-menu createuserform">
             <span class="createusertext">Type your email and password.</span>
-             <form id="signup-form" action="./dashboard" method="POST">
+             <form id="signup-form" action="/users" method="POST">
                 <input id="signup-email"  type="email" placeholder="Email" name="email" required>
                 <input id="signup_password"  type="password" placeholder="Password" name="password" required>
                 
@@ -56,7 +61,7 @@
             </form>
           </ul>
         </li>
-        
+        <% } %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

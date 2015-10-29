@@ -28,7 +28,7 @@ app.use(session({
 
 app.post('/users', function (req, res) {
   console.log(req.body);
-  User.createSecure(req.body.email, req.body.password, function (err, newUser) {
+  db.User.createSecure(req.body.email, req.body.password, function (err, newUser) {
     req.session.userId = newUser._id;
     res.redirect('/dashboard');
   });
@@ -82,21 +82,7 @@ app.get('/api/search', function(req, res){
 /////////////////////////////// login logout user stuff
 
 
-// // show user dashboard page
-// app.get('/dashboard', function (req, res) {
-//   console.log('session user id: ', req.session.userId);
-//   // find the user currently logged in
-//   User.findOne({_id: req.session.userId}, function (err, currentUser) {
-//     if (err){
-//       console.log('database error: ', err);
-//       res.redirect('/');
-//     } else {
-//       // render profile template with user's data
-//       console.log('loading profile of logged in user');
-//       res.render('dashboard', {user: currentUser});
-//     }
-//   });
-// });
+
 
 
 
@@ -110,22 +96,50 @@ app.get('/logout', function (req, res) {
 
 // home route rendering index
 app.get('/', function (req, res) {
-  res.render('index');
+  console.log('session user id: ', req.session.userId);
+  // find the user currently logged in
+  db.User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    if (err){
+      console.log('database error: ', err);
+      res.redirect('/');
+    } else {
+      // render profile template with user's data
+      console.log('loading profile of logged in user');
+      res.render('index', {user: currentUser});
+    }
+  });
 });
 
-// Route to map results page
-app.get('/map', function(req, res){
-  res.render('map');
-});
+// // Route to map results page
+// app.get('/map', function(req, res){
+//   res.render('map');
+// });
 
-app.post('/map', function(req, res){
-  res.render('map');
-});
+// app.post('/map', function(req, res){
+//   res.render('map');
+// });
 
 
-// route to dashboard for editing
+// // route to dashboard for editing
+// app.get('/dashboard', function (req, res) {
+//   res.render('dashboard', {currentuser: userloggedin});
+// });
+
+
+// show user dashboard page
 app.get('/dashboard', function (req, res) {
-  res.render('dashboard');
+  console.log('session user id: ', req.session.userId);
+  // find the user currently logged in
+  db.User.findOne({_id: req.session.userId}, function (err, currentUser) {
+    if (err){
+      console.log('database error: ', err);
+      res.redirect('/');
+    } else {
+      // render profile template with user's data
+      console.log('loading profile of logged in user');
+      res.render('dashboard', {user: currentUser});
+    }
+  });
 });
 
 // listen on port 3000
