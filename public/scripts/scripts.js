@@ -1,43 +1,61 @@
 
 
 console.log('sanity check: client-side js loaded');
+
 var map;
 var initMap = function(){
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 37.783, lng: -122.4167},
-        zoom: 5
-    });
+      map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 37.783, lng: -122.4167},
+      zoom: 0
+      });
 };
 
 $(document).ready(function() {
-
+ 
   $('#search-form').on('submit', function(e){
     e.preventDefault();
+    reset();
+
     var serializedsearch = $('#search-form').serialize();
       $.getJSON( ('/api/search?'+serializedsearch), function( foundfairs ) {
         var items = [];
-        console.log(foundfairs);
+
         $.each( foundfairs, function(key, val){ 
-          for(var i=0; i<foundfairs.length; i++){
-            var coordinates = {lat:foundfairs[i].latitude, lng: foundfairs[i].longitude};
-             var newMarker = new google.maps.Marker({
-                 position: coordinates,
-                 map: map,
-                 title: foundfairs[i].name,
-            });
-            }
-            });
-            
-        
-        $( "<ul/>", {
-        "id": "geoquakes",
+          console.log("val =", val);
+          items.push( "<li id='" + key + "> <h5><a href='" + val.website + "'>" + val.name + "</a></h5></br> "+ val.fairId + "</br>" + val.city +" "+ val.state + " "+ val.country + "</li>");
+          var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
+          console.log(coordinates);
+          var newMarker = new google.maps.Marker({
+             position: coordinates,
+             map: map,
+             title: val.name,
+          });
+        });
+      $( "<ul/>", {
+        "id": "foundfairs",
         html: items.join( "" )
     }).appendTo( "#info" );
     
+    $('#findafair').modal('hide');
+
+
+
+      });
+            
+        
+        
+    
 });  
 
-})
+});
 
+
+///////////////
+
+var reset = function(){
+  $('#info').empty();
+
+};
 
 
 
@@ -69,5 +87,4 @@ $(document).ready(function() {
     });
   });
 
-});
 

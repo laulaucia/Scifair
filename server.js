@@ -73,7 +73,7 @@ app.get('/api/search', function(req, res){
       console.log("we have an error");
     }
     console.log(fairs);
-    res.json({foundfairs: fairs, search: req.body });
+    res.json(fairs);
 
   });
 });
