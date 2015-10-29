@@ -1,12 +1,12 @@
-
-
 console.log('sanity check: client-side js loaded');
 
 var map;
+var markers = [];
 var initMap = function(){
       map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 37.783, lng: -122.4167},
-      zoom: 0
+      mapTypeId: google.maps.MapTypeId.TERRAIN,
+      zoom: 1
       });
 };
 
@@ -14,14 +14,16 @@ $(document).ready(function() {
  
   $('#search-form').on('submit', function(e){
     e.preventDefault();
-    reset();
 
     var serializedsearch = $('#search-form').serialize();
       $.getJSON( ('/api/search?'+serializedsearch), function( foundfairs ) {
         var items = [];
+        if ($('#info').is(!':empty')){
+          reset();
+        }
+        
 
         $.each( foundfairs, function(key, val){ 
-          console.log("val =", val);
           items.push( "<li id='" + key + "> <h5><a href='" + val.website + "'>" + val.name + "</a></h5></br> "+ val.fairId + "</br>" + val.city +" "+ val.state + " "+ val.country + "</li>");
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
           console.log(coordinates);
@@ -29,6 +31,7 @@ $(document).ready(function() {
              position: coordinates,
              map: map,
              title: val.name,
+             animation: google.maps.Animation.DROP,
           });
         });
       $( "<ul/>", {
@@ -50,10 +53,12 @@ $(document).ready(function() {
 });
 
 
-///////////////
+/////////////// map stuff ///////////
+
 
 var reset = function(){
   $('#info').empty();
+  google.maps.marker.setMap(null);
 
 };
 
