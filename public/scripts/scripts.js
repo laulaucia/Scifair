@@ -23,7 +23,7 @@ $(document).ready(function() {
         $('.col-md-4 p').empty();
 
         $.each( foundfairs, function(key, val){ 
-          items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + " "+ val.country + "</li>" );
+          items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + "</br> "+ val.country + "</br> Fair starts: "+ val.startDate+ "</br> Affiliations: "+ val.affiliations+"</li>" );
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
 
             var newMarker = new google.maps.Marker({

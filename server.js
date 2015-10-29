@@ -82,21 +82,21 @@ app.get('/api/search', function(req, res){
 /////////////////////////////// login logout user stuff
 
 
-// show user dashboard page
-app.get('/dashboard', function (req, res) {
-  console.log('session user id: ', req.session.userId);
-  // find the user currently logged in
-  User.findOne({_id: req.session.userId}, function (err, currentUser) {
-    if (err){
-      console.log('database error: ', err);
-      res.redirect('/');
-    } else {
-      // render profile template with user's data
-      console.log('loading profile of logged in user');
-      res.render('dashboard', {user: currentUser});
-    }
-  });
-});
+// // show user dashboard page
+// app.get('/dashboard', function (req, res) {
+//   console.log('session user id: ', req.session.userId);
+//   // find the user currently logged in
+//   User.findOne({_id: req.session.userId}, function (err, currentUser) {
+//     if (err){
+//       console.log('database error: ', err);
+//       res.redirect('/');
+//     } else {
+//       // render profile template with user's data
+//       console.log('loading profile of logged in user');
+//       res.render('dashboard', {user: currentUser});
+//     }
+//   });
+// });
 
 
 
