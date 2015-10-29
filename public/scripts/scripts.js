@@ -2,11 +2,12 @@ console.log('sanity check: client-side js loaded');
 
 var map;
 var markers = [];
+var startmap = {lat: 37.783, lng: -122.4167};
 var initMap = function(){
       map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 37.783, lng: -122.4167},
-      mapTypeId: google.maps.MapTypeId.TERRAIN,
-      zoom: 1
+      center: startmap,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      zoom: 4
       });
 };
 
@@ -14,26 +15,29 @@ $(document).ready(function() {
  
   $('#search-form').on('submit', function(e){
     e.preventDefault();
+    reset();
 
     var serializedsearch = $('#search-form').serialize();
       $.getJSON( ('/api/search?'+serializedsearch), function( foundfairs ) {
         var items = [];
-        if ($('#info').is(!':empty')){
-          reset();
-        }
-        
+        $('.col-md-4 p').empty();
 
         $.each( foundfairs, function(key, val){ 
-          items.push( "<li> <h5>"+ val.fairId +": <a href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + " "+ val.country + "</li>" );
+          items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + " "+ val.country + "</li>" );
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
-          console.log(coordinates);
-          var newMarker = new google.maps.Marker({
-             position: coordinates,
-             map: map,
-             title: val.name,
-             animation: google.maps.Animation.DROP,
-          });
-        });
+
+            var newMarker = new google.maps.Marker({
+               position: coordinates,
+               map: map,
+               title: val.name,
+               animation: google.maps.Animation.DROP});
+          markers.push(newMarker);
+          map.panTo(newMarker.getPosition());
+          setMapOnAll();
+          showMarkers();
+          
+        
+      });
       $( "<ul/>", {
         "id": "foundfairs",
         html: items.join( "" )
@@ -58,11 +62,32 @@ $(document).ready(function() {
 
 var reset = function(){
   $('#info').empty();
-  google.maps.marker.setMap(null);
+  deleteMarkers();
 
 };
 
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (var i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
 
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
 
 
 /////////////////////////// user JS ///////////////////////////////

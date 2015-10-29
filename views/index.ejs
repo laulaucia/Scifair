@@ -1,19 +1,21 @@
 <% include ./partials/head.ejs %>
 <% include ./partials/mapheader.ejs %>
 <body>
-	<h1 class="glow">Science Fair Search</h1>
+	<h2 class="glow text-center">Science Fair Search</h2>
 	<% include ./partials/navbar.ejs %>
-	
-
-<% include ./partials/searchmodal.ejs %>
-
+	<% include ./partials/searchmodal.ejs %>
 <div class="row main-row">
 
 	<div id="map" class="col-sm-5 col-sm-offset-1"> 
 
 	</div>
 
-    <div id="info" class="col-md-4">
+    <div  class="col-md-4">
+    	<h3 class="text-center">Search results:</h3>
+    	<p class="text-center"> *  No search yet  *<p>
+    	<div id="info">
+    		
+    	</div>
     	
 	</div>
 

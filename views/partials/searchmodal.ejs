@@ -1,79 +1,42 @@
-<!-- BEGIN # BOOTSNIP INFO -->
-<div class="container">
-	<div class="row">
-		<h2 class="text-center">Search for a science fair near you!</h2>
-        <p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#findafair">Find a fair</a></p>
-    </div>
+<!-- BEGIN # SEARCH BUTTON DISPLAY -->
+<div class="row">
+  <p class="text-center">   <a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#findafair">Find a science fair near you!</a></p>
 </div>
-<!-- END # BOOTSNIP INFO -->
-
-<!-- BEGIN # MODAL LOGIN -->
-<div class="modal fade" id="findafair" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-   
+<!-- BEGIN # MODAL Search -->
+<div class="modal fade" id="findafair"  aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">  
     <!-- <div class="modal-custom" style="background-color: #fff; height:400px;"> -->
-         <div class="modal-content">
-          <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-dialog">
             <div class="modal-header" align="center">
+                <!-- close button -->
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                 </button>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+                <!-- Begin # search Form -->
                 <form id='search-form'>   
-                  <div class="modal-body">
-                    <div id="div-login-msg">
-                        <!-- Begin # search Form -->
-                        <span id="text-login-msg">Search for a fair by state or country</span>
-                        </br>
-                        </br>
-                        <label class="modallabels">Enter a state</label>
-                        <input id="search-by-state" class="form-control" type="text" placeholder="State" name="state"> 
-                        <label class="modallabels">Enter a country</label>
-                        <input id="search-by-country" class="form-control" type="text" placeholder="County *remember to capitalize*" name="country" defaultvalue="United States of America" >     
-                        <div class="modal-footer">
-                            <div>
-                                <button id="searchsubmit" type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                    <div class="modal-body">
+                        <div id="div-login-msg">
+                            <span id="text-login-msg">Search for a fair by state or country</span>
+                            </br>
+                            <label class="modallabels">Enter a state</label>
+                            <input id="search-by-state" class="form-control" type="text" placeholder="State" name="state"> 
+                            <label class="modallabels">Enter a country</label>
+                            <input id="search-by-country" class="form-control" type="text" placeholder="County *remember to capitalize*" name="country" defaultvalue="United States of America" >     
+                            <div class="modal-footer">
+                                <div>
+                                    <button id="searchsubmit" type="submit" class="btn btn-primary btn-lg btn-block">Search</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </form> 
             </div>
         </div>
     </div>
-    <!-- </div> -->
 </div>
 
-<!-- End # Login Form -->
 
-<!-- Begin | Lost Password Form -->
 
-<!-- End | Lost Password Form -->
 
-<!-- Begin | Register Form -->
-<form id="register-form" style="display:none;">
-  <div class="modal-body">
-      <div id="div-register-msg">
-        <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-        <span id="text-register-msg">Register an account.</span>
-    </div>
-    <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-    <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-    <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-</div>
-<div class="modal-footer">
-    <div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
-    </div>
-    <div>
-        <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-        <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-    </div>
-</div>
-</form>
-<!-- End | Register Form -->
 
-</div>
-<!-- End # DIV Form -->
 
-</div>
-</div>
-</div>
-    <!-- END # MODAL LOGIN -->
