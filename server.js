@@ -49,9 +49,9 @@ app.post('/sessions', function (req, res) {
   });
 });
 
+///////////////////SEARCHING my DB with API/search
 
-
-// THE FAIRS THAT COME OUT OF SEARCH!! 
+// THE FAIRS THAT COME OUT OF SEARCH!!  this was when i tried to overcomplicate things
 //var foundfairs = [];
 
 // search route for state and country
@@ -79,7 +79,7 @@ app.get('/api/search', function(req, res){
 });
 
 
-
+/////////////////////////////// login logout user stuff
 
 
 // show user dashboard page

@@ -57,7 +57,7 @@ $(document).ready(function() {
 });
 
 
-/////////////// map stuff ///////////
+/////////////// google map stuff ///////////
 
 
 var reset = function(){
@@ -112,7 +112,7 @@ function deleteMarkers() {
     //   was triggered from the form
     var loginData = $(this).serialize();
     // send POST request to /login with the form data
-    $.post('/login', loginData, function(response) {
+    $.post('/dashboard', loginData, function(response) {
       console.log(response);
     });
   });

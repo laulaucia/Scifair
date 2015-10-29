@@ -21,15 +21,32 @@
      
       <ul class="nav navbar-nav navbar-right">
         <li><a target="_blank" href="https://student.societyforscience.org/forms">International science fair forms and rules</a></li>
-        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create an account <b class="caret"></b></a>
+          <ul class="dropdown-menu createuserform">
+            <span class="createusertext">Type your email and password.</span>
+             <form id="signup-form" action="./dashboard" method="POST">
+                <input id="signup-email"  type="email" placeholder="Email" name="email" required>
+                <input id="signup_password"  type="password" placeholder="Password" name="password" required>
+                
+                <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Create</button>
+                            </div>
+                                
+                </div>
+            </form>
+          </ul>
+        </li>
 
         <li class="dropdown usernameshow">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login to edit <b class="caret"></b></a>
           <ul class="dropdown-menu loginform">
-            <span class="logintext">Type your username and password.</span>
-             <form id="login-form">
-                <input id="login_username"  type="text" placeholder="Username" required>
-                <input id="login_password"  type="password" placeholder="Password" required>
+            <span class="logintext">Type your email and password.</span>
+             <form id="login-form" action="./dashboard" method="POST">
+                <input id="login_email"  type="email" placeholder="Email" name="email"required>
+                <input id="login_password"  type="password" placeholder="Password" name="password"required>
                 
                 <div class="modal-footer">
                             <div>
@@ -40,6 +57,7 @@
             </form>
           </ul>
         </li>
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

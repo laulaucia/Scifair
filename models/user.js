@@ -4,8 +4,9 @@ var mongoose = require('mongoose'),
   bcrypt = require('bcrypt');
 
 var userSchema = new Schema({
-  email: String,
-  passwordDigest: String
+  email: {type: String, required: true},
+  passwordDigest: String,
+  fairs: Array
 });
 
 userSchema.statics.createSecure = function (email, password, callback) {
@@ -22,7 +23,8 @@ userSchema.statics.createSecure = function (email, password, callback) {
       // create the new user (save to db) with hashed password
       UserModel.create({
         email: email,
-        passwordDigest: hash
+        passwordDigest: hash,
+        fairs: []
       }, callback);
     });
   });

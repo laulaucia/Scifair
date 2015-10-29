@@ -11,6 +11,13 @@ h1 {
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
     background-color: transparent;
     color: rgb(85, 85, 85);
+    box-shadow: 0 10px 6px -6px #777;
+
+}
+
+.navbar{
+    box-shadow: 0 10px 6px -6px #777;
+    background-color: white;
 
 }
 li.dropdown:hover > .dropdown-menu {
@@ -246,6 +253,7 @@ html, body {
      -webkit-transition-duration: 0.5s;
      -moz-transition-duration: 0.5s;
      -o-transition-duration: 0.5s;
+     box-shadow: 0 10px 6px -6px #777;
  }
 
 /*

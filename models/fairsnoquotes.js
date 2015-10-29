@@ -5729,6 +5729,7 @@ var allFairs = [
 for (var i=0; i < allFairs.length; i ++){
     db.Fair.create(allFairs[i], function (err, fair){
         console.log(fair._id);
+        process.exit();
     });
 }
 
