@@ -55,16 +55,16 @@ app.post('/sessions', function (req, res) {
 //var foundfairs = [];
 
 // search route for state and country
-app.post('/search', function(req,res){
-  console.log(req.body);
-  db.Fair.find(req.body, function(err, fairs){
-    if(err){
-      console.log("we have an error");
-    }
-    console.log(fairs);
-    res.render('map', {foundfairs: fairs, search: req.body });
-  });
-});
+// app.post('/search', function(req,res){
+//   console.log(req.body);
+//   db.Fair.find(req.body, function(err, fairs){
+//     if(err){
+//       console.log("we have an error");
+//     }
+//     console.log(fairs);
+//     res.render('map', {foundfairs: fairs, search: req.body });
+//   });
+// });
  
 app.get('/api/search', function(req, res){
   console.log(req.query);

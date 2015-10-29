@@ -9,7 +9,7 @@ h1 {
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
 .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
-    background-color: #fff;
+    background-color: transparent;
     color: rgb(85, 85, 85);
 
 }
@@ -18,16 +18,33 @@ li.dropdown:hover > .dropdown-menu {
     padding: 5px;
 }
 
+.glow {
+  color: #444;
+  text-shadow: 
+    1px 0px 1px #ccc, 0px 1px 1px #eee, 
+    2px 1px 1px #ccc, 1px 2px 1px #eee,
+    3px 2px 1px #ccc, 2px 3px 1px #eee,
+    4px 3px 1px #ccc, 3px 4px 1px #eee,
+    5px 4px 1px #ccc, 4px 5px 1px #eee,
+    6px 5px 1px #ccc, 5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+}
+
 html, body { 
     margin: 0; 
     padding: 0; 
+    background-image: linear-gradient(lightblue, white);
+    color: steelblue;
 }
 
  #map {
   position:static;
   height: 250px;
   margin-right: 20px;
-  margin-top: 60px;
+  margin-top: 20px;
+  border: solid grey 7px;
+  border-radius: 5px;
+  box-shadow: 0 10px 6px -6px #777;
   
 }
 
@@ -138,6 +155,7 @@ html, body {
      color: #ddd;
 }
 
+
 /* #########################################
    #    override the bootstrap configs     #
    ######################################### */
@@ -190,7 +208,7 @@ html, body {
 }
 
 .btn-lg, .btn-group-lg>.btn {
-    border-radius: 0px;
+    border-radius: 10px;
 }
 
 .btn-link {
