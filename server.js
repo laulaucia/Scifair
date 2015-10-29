@@ -7,6 +7,7 @@ var express = require('express'),
   request = require('request'),
   db = require('./models');
 
+require("dotenv").load();
 
 
 // middleware
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
 	saveUninitialized: true,
 	resave: true,
-	secret: 'SuperSecretCookie',
+	secret: process.env.FAIRSESSION,
   	cookie: { maxAge: 30 * 60 * 1000 }
 }));
 
@@ -80,11 +81,6 @@ app.get('/api/search', function(req, res){
 
 
 /////////////////////////////// login logout user stuff
-
-
-
-
-
 
 app.get('/logout', function (req, res) {
   // remove the session user id

@@ -59,7 +59,6 @@ $(document).ready(function() {
 
 /////////////// google map stuff ///////////
 
-
 var reset = function(){
   $('#info').empty();
   deleteMarkers();

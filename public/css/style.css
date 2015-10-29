@@ -12,6 +12,7 @@ h1 {
      font-size: 3em;
      text-align: center;
      padding-bottom: 10px;
+     font-family: 'Orbitron', sans-serif;
 }
 
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
