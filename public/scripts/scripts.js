@@ -112,7 +112,7 @@ function deleteMarkers() {
     //   was triggered from the form
     var loginData = $(this).serialize();
     // send POST request to /login with the form data
-    $.post('/dashboard', loginData, function(response) {
+    $.post('/users', loginData, function(response) {
       console.log(response);
     });
   });
