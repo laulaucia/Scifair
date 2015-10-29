@@ -24,7 +24,7 @@ $(document).ready(function() {
         
 
         $.each( foundfairs, function(key, val){ 
-          items.push( "<li id='" + key + "> <h5><a href='" + val.website + "'>" + val.name + "</a></h5></br> "+ val.fairId + "</br>" + val.city +" "+ val.state + " "+ val.country + "</li>");
+          items.push( "<li> <h5>"+ val.fairId +": <a href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + " "+ val.country + "</li>" );
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
           console.log(coordinates);
           var newMarker = new google.maps.Marker({
