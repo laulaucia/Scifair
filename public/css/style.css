@@ -12,15 +12,24 @@ h1 {
      text-align: center;
      padding-bottom: 10px;
      font-family: 'VT323', sans-serif;
-     color: #444;
+     color: #fff;
 }
 
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
 .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
-    background-color: #fff;
+    background-color: transparent;
     color: rgb(85, 85, 85);
 }
+
+.white {
+    color: #fff !important;
+}
+
+.dropdown-menu{
+    background-color: rgba(200,200,200, 0.3);
+}
+
 .addafair{
     padding-bottom: 100px;
     position: static;
@@ -28,9 +37,9 @@ h1 {
 
 .navbar{
     width: 100%;
-   background: #fff;
+   background: transparent;
    border: none;
-   color: #444;
+   color: #fff;
 
 }
 li.dropdown:hover > .dropdown-menu {
@@ -42,8 +51,8 @@ li.dropdown:hover > .dropdown-menu {
 html, body { 
     margin: 0;
     padding: 0; 
-    background-image: white;
-    color: #444;
+    background-image: url(./NasaGalaxypic.png);
+    color: #fff;
 }
 
  #map {
@@ -103,8 +112,6 @@ html, body {
     line-height: 28px;
     transition: all ease-in-out 500ms;
 }
-
-
 
 #logintext{
      padding: 10px;
@@ -181,6 +188,7 @@ html, body {
 .btn-lg, .btn-group-lg>.btn {
     border-radius: 5px;
     background-color: #444;
+    border: none;
     
 }
 
@@ -195,9 +203,16 @@ html, body {
 
 }
 
+.close{
+    color: white
+}
 .glyphicon {
     top: 0px;
     color: white;
+}
+
+a .white {
+    color: #fff !important;
 }
 
 
@@ -238,5 +253,5 @@ html, body {
      color: #f39c12;
  }
  #social-gh:hover {
-    color: #444;
+    color: #fff;
  }

@@ -42,7 +42,7 @@ $(document).ready(function() {
             var newMarker = new google.maps.Marker({
                position: coordinates,
                map: map,
-               label: labels[labelIndex++ % labels.length],
+               label: labels[labelIndex++ % foundfairs.length],
                title: val.name,
                animation: google.maps.Animation.DROP});
           //push to marker   
@@ -67,7 +67,7 @@ $(document).ready(function() {
 var reset = function(){
   $('#info').empty();
   deleteMarkers();
-  var labelIndex = 0;
+  labelIndex = 0;
 
 };
 

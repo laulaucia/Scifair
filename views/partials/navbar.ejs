@@ -1,69 +1,69 @@
 <div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./" >SCIFAIR SEARCH</a>
-    </div>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand white" href="./" >SCIFAIR SEARCH</a>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-      <ul class="nav navbar-nav">
-      <li><a target="_blank" href="https://student.societyforscience.org/forms">SCIENCE FAIR RULES & FORMS</a></li>
-      </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-      <% if (user){%>
-        <li><a href="./dashboard">DASHBOARD</a></li> 
-        <li><a href="./logout">LOGOUT</a></li>
-        <% } %> 
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <% if (!user){ %>  
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">CREATE AN ACCOUNT <b class="caret"></b></a>
-          <ul class="dropdown-menu createuserform">
-            <span class="createusertext">TYPE YOUR EMAIL & PASSWORD</span>
-             <form id="signup-form" action="/users" method="POST">
+        <ul class="nav navbar-nav">
+          <li><a class="white" target="_blank" href="https://student.societyforscience.org/forms">SCIENCE FAIR RULES & FORMS</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if (user){%>
+          <li><a class="white" href="./dashboard">DASHBOARD</a></li> 
+          <li><a class="white" href="./logout">LOGOUT</a></li>
+          <% } %> 
+
+          <% if (!user){ %>  
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle white" data-toggle="dropdown">CREATE AN ACCOUNT <b class="caret"></b></a>
+            <ul class="dropdown-menu createuserform">
+              <span class="createusertext">TYPE YOUR EMAIL & PASSWORD</span>
+              <form id="signup-form" action="/users" method="POST">
                 <input id="signup-email"  type="email" placeholder="EMAIL" name="email" required>
                 <input id="signup_password"  type="password" placeholder="PASSWORD" name="password" required>
-                
-                <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE</button>
-                            </div>
-                                
-                </div>
-            </form>
-          </ul>
-        </li>
 
-        <li class="dropdown usernameshow">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN TO EDIT <b class="caret"></b></a>
-          <ul class="dropdown-menu loginform">
-            <span class="logintext">TYPE YOUR EMAIL & PASSWORD</span>
-             <form id="login-form" action="/users" method="POST">
+                <div class="modal-footer">
+                  <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE</button>
+                  </div>
+
+                </div>
+              </form>
+            </ul>
+
+          </li>
+
+          <li class="dropdown usernameshow">
+            <a href="#" class="dropdown-toggle white" data-toggle="dropdown">LOGIN TO EDIT <b class="caret"></b></a>
+            <ul class="dropdown-menu loginform">
+              <span class="logintext">TYPE YOUR EMAIL & PASSWORD</span>
+              <form id="login-form" action="/users" method="POST">
                 <input id="login_email"  type="email" placeholder="EMAIL" name="email"required>
                 <input id="login_password"  type="password" placeholder="PASSWORD" name="password"required>
-                
+
                 <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                            </div>
-                                
-                </div>
-            </form>
-          </ul>
-        </li>
-        <% } %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+                  <div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                  </div>
+                </div>        
+              </form>
+            </ul>
+          </li>
+          <% } %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 </div>
