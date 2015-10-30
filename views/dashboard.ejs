@@ -1,35 +1,35 @@
 <% include ./partials/head.ejs %>
 <body>
-	<h1>User dashboard</h1>
+	<h1>USER DASHBOARD</h1>
 	<% include ./partials/navbar.ejs %>
 
 	<div class="main-row">
 		<div id="addafair" class="col-sm-6 col-sm-offset-3">
-		<h3>Create a new Fair</h3>
+		<h3>CREATE A NEW FAIR</h3>
 		<form id="newFairform" action="/fairs" method="POST">
-			<label>Fair ID</label>
-		    <input id="fairId"  type="text" placeholder="fairId" name="fairId" required>
-		    <label>Fair Name</label>
-		    <input id="fairname"  type="text" placeholder="Fair name" name="name" required></br>
-		    <label>Fair City</label>
-		    <input id="faircity"  type="text" placeholder="Fair City" name="city" required>
+			<label>FAIR ID</label>
+		    <input id="fairId"  type="text" placeholder="FAIRID" name="fairId" required>
+		    <label>FAIR NAME</label>
+		    <input id="fairname"  type="text" placeholder="FAIR NAME" name="name" required></br>
+		    <label>FAIR CITY</label>
+		    <input id="faircity"  type="text" placeholder="FAIR CITY" name="city" required>
 		    <label>Fair State</label>
-		    <input id="fairstate"  type="text" placeholder="Fair State" name="state" required></br
-		    <label>Fair Country</label>
-		    <input id="faircountry"  type="text" placeholder="Fair Country" name="country" required></br>		    <label>Fair Start Date</label>
-		    <input id="startDate"  type="date" placeholder="Fair start date" name="country" required>
-		    <label>Fair End Date</label>
-		    <input id="endDate"  type="date" placeholder="Fair end date" name="endDate" ></br>
-		    <label>Longitude</label>
-		    <input id="longitude"  type="text" placeholder="longitude" name="longitude" required>
-		    <label>Latitude</label>
-		    <input id="latitude"  type="text" placeholder="latitude" name="latitude" required></br>
-		    <label>Fair Website</label>
-		    <input id="fairwebsite"  type="text" placeholder="website" name="website" ></br>
-		    <label>Affiliations</label>
-		    <input   type="checkbox" value="Intel ISEF" name="affiliations[]" > Intel ISEF <input   type="checkbox" value="Broadcom MASTERS" name="affiliations[]" >Broadcom MASTERS
+		    <input id="fairstate"  type="text" placeholder="FAIR STATE" name="state" required></br
+		    <label>FAIR COUNTRY</label>
+		    <input id="faircountry"  type="text" placeholder="FAIR COUNTRY" name="country" required></br>		<label>FAIR START</label>
+		    <input id="startDate"  type="date" placeholder="FAIR START DATE" name="country" required>
+		    <label>FAIR END DATE</label>
+		    <input id="endDate"  type="date" placeholder="FAIR END DATE" name="endDate" ></br>
+		    <label>LONGITUDE</label>
+		    <input id="longitude"  type="text" placeholder="LOGITUDE" name="longitude" required>
+		    <label>LATITUDE</label>
+		    <input id="latitude"  type="text" placeholder="LATITUDE" name="latitude" required></br>
+		    <label>FAIR WEBSITE</label>
+		    <input id="fairwebsite"  type="text" placeholder="WEBSITE" name="website" ></br>
+		    <label>AFFILIATIONS</label>
+		    <input   type="checkbox" value="Intel ISEF" name="affiliations[]" > INTEL ISEF <input   type="checkbox" value="Broadcom MASTERS" name="affiliations[]" >BROADCOM MASTERS
 		    <div>
-		        <button type="submit" class="btn btn-primary btn-lg btn-block" >Create a new fair!</button>
+		        <button type="submit" class="btn btn-primary btn-lg btn-block" >CREATE A NEW FAIR</button>
 		    </div> 
 		    </form>
 		</div>

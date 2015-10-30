@@ -30,6 +30,7 @@ h1 {
     width: 100%;
    background: #fff;
    border: none;
+   color: #444;
 
 }
 li.dropdown:hover > .dropdown-menu {
@@ -202,12 +203,9 @@ html, body {
 
 .glyphicon {
     top: 0px;
-    color: white
+    color: white;
 }
 
-.form-control {
-  border-radius: 0px;
-}
 
 
 /* ------- footer styles ---------------*/
