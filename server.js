@@ -138,5 +138,14 @@ app.get('/dashboard', function (req, res) {
   });
 });
 
+app.post('fairs', function(req, res){
+  db.Fair.create(fair, function(err, newfair){
+    if (err)console.log(err);
+    console.log(newfair);
+    res.json(newfair);
+  });
+});
+
+
 // listen on port 3000
 app.listen(process.env.PORT || 3000);

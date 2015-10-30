@@ -3,8 +3,7 @@
 input {
   border-radius: 5px;
   border: solid 1px #fff;
-  box-shadow: inset 1px 1px 2px 0 #707070;
-  transition: box-shadow 0.3s;
+  
   
 }
 
@@ -27,9 +26,9 @@ h1 {
 }
 
 .navbar{
-    box-shadow: 0 10px 6px -6px #777;
     background-image:linear-gradient(white, lightgrey);
     border: none;
+    width: 100%;
 
 }
 li.dropdown:hover > .dropdown-menu {
@@ -39,10 +38,6 @@ li.dropdown:hover > .dropdown-menu {
 
 .glow {
   color: #444;
-  text-shadow: 
-    1px 0px 1px #ccc, 0px 1px 1px #eee, 
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee;
     
 }
 
@@ -60,7 +55,7 @@ html, body {
   margin-bottom: 50px;
   border: solid grey 7px;
   border-radius: 5px;
-  box-shadow: 0 10px 6px -6px #777;
+  
   
 }
 
@@ -230,7 +225,7 @@ html, body {
 
 .btn-lg, .btn-group-lg>.btn {
     border-radius: 10px;
-    box-shadow: 0 10px 6px -6px #777;
+    
 }
 
 .btn-link {
@@ -269,7 +264,7 @@ html, body {
      -webkit-transition-duration: 0.5s;
      -moz-transition-duration: 0.5s;
      -o-transition-duration: 0.5s;
-     box-shadow: 0 10px 6px -6px #777;
+     
  }
 
 /*
@@ -287,4 +282,7 @@ html, body {
  }
  #social-em:hover {
      color: #f39c12;
+ }
+ #social-gh:hover {
+    color: #444;
  }

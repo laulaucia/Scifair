@@ -6,7 +6,7 @@
 	<div class="main-row">
 		<div id="addafair" class="col-sm-6 col-sm-offset-3">
 		<h3>Create a new Fair</h3>
-		<form id="newFairform" action="./fair" method="POST">
+		<form id="newFairform" action="/fairs" method="POST">
 			<label>Fair ID</label>
 		    <input id="fairId"  type="text" placeholder="fairId" name="fairId" required>
 		    <label>Fair Name</label>
@@ -20,9 +20,9 @@
 		    <label>Fair End Date</label>
 		    <input id="endDate"  type="date" placeholder="Fair end date" name="endDate" ></br>
 		    <label>Longitude</label>
-		    <input id="longitude"  type="number" placeholder="longitude" name="longitude" required>
+		    <input id="longitude"  type="text" placeholder="longitude" name="longitude" required>
 		    <label>Latitude</label>
-		    <input id="latitude"  type="number" placeholder="latitude" name="latitude" required></br>
+		    <input id="latitude"  type="text" placeholder="latitude" name="latitude" required></br>
 		    <label>Fair Website</label>
 		    <input id="fairwebsite"  type="text" placeholder="website" name="website" ></br>
 		    <label>Affiliations</label>

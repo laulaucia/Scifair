@@ -9,34 +9,34 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="./" >Scifair Search</a>
+      <a class="navbar-brand" href="./" >SCIFAIR SEARCH</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       
       <ul class="nav navbar-nav">
-      <li><a target="_blank" href="https://student.societyforscience.org/forms">International forms and rules</a></li>
+      <li><a target="_blank" href="https://student.societyforscience.org/forms">SCIENCE FAIR RULES & FORMS</a></li>
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
       <% if (user){%>
-        <li><a href="./dashboard">Dashboard</a></li> 
-        <li><a href="./logout">Logout</a></li>
+        <li><a href="./dashboard">DASHBOARD</a></li> 
+        <li><a href="./logout">LOGOUT</a></li>
         <% } %> 
 
         <% if (!user){ %>  
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create an account <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">CREATE AN ACCOUNT <b class="caret"></b></a>
           <ul class="dropdown-menu createuserform">
-            <span class="createusertext">Type your email and password.</span>
+            <span class="createusertext">TYPE YOUR EMAIL & PASSWORD</span>
              <form id="signup-form" action="/users" method="POST">
-                <input id="signup-email"  type="email" placeholder="Email" name="email" required>
-                <input id="signup_password"  type="password" placeholder="Password" name="password" required>
+                <input id="signup-email"  type="email" placeholder="EMAIL" name="email" required>
+                <input id="signup_password"  type="password" placeholder="PASSWORD" name="password" required>
                 
                 <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Create</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE</button>
                             </div>
                                 
                 </div>
@@ -45,16 +45,16 @@
         </li>
 
         <li class="dropdown usernameshow">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login to edit <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN TO EDIT <b class="caret"></b></a>
           <ul class="dropdown-menu loginform">
-            <span class="logintext">Type your email and password.</span>
+            <span class="logintext">TYPE YOUR EMAIL & PASSWORD</span>
              <form id="login-form" action="/users" method="POST">
-                <input id="login_email"  type="email" placeholder="Email" name="email"required>
-                <input id="login_password"  type="password" placeholder="Password" name="password"required>
+                <input id="login_email"  type="email" placeholder="EMAIL" name="email"required>
+                <input id="login_password"  type="password" placeholder="PASSWORD" name="password"required>
                 
                 <div class="modal-footer">
                             <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
                             </div>
                                 
                 </div>

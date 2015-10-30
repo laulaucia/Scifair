@@ -23,13 +23,13 @@ $(document).ready(function() {
         $('.col-md-4 p').empty();
 
         $.each( foundfairs, function(key, val){ 
-          items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website + "'>" + val.name + "</a></h5>" + val.city +", "+ val.state + "</br> "+ val.country + "</br> Fair starts: "+ val.startDate+ "</br> Affiliations: "+ val.affiliations+"</li>" );
+          items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website  + "'>" + val.name  + "</a></h5>" + val.city  +", "+ val.state  + "</br> "+ val.country  + "</br> Fair starts: "+ val.startDate + "</br> Affiliations: "+ val.affiliations +"</li>" );
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
 
             var newMarker = new google.maps.Marker({
                position: coordinates,
                map: map,
-               title: val.name,
+               title: val.name.toUpperCase,
                animation: google.maps.Animation.DROP});
           markers.push(newMarker);
           map.panTo(newMarker.getPosition());
@@ -116,4 +116,11 @@ function deleteMarkers() {
     });
   });
 
-
+///////////////
+$('#addafair').on('submit', function(e){
+  e.preventDefault();
+  var newfairfromform = $(this).serialize();
+  $.post('/fairs', newfairfromform, function(response){
+    console.log(response);
+  });
+});
