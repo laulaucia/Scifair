@@ -24,7 +24,6 @@ a:hover{
     color: red;
 }
 
-
 input {
   border-radius: 5px;
   border: solid 1px #eee;
@@ -81,9 +80,7 @@ li.dropdown:hover > .dropdown-menu {
   height: 250px;
   margin-top: 20px;
   margin-bottom: 60px;
-  border-radius: 20px;
-  
-  
+  border-radius: 20px;  
 }
 
 .info {
@@ -92,15 +89,12 @@ li.dropdown:hover > .dropdown-menu {
     overflow: auto;
 }
 
-
 .main-row {
 
     padding-bottom: 100px;
 }
 
-
 /*-------- search styles (currently a login modal)*/
-
 
 /* #####################################################################
    #
@@ -155,7 +149,6 @@ li.dropdown:hover > .dropdown-menu {
      color: #fff;
 }
 
-
 /* #########################################
    #    override the bootstrap configs     #
    ######################################### */
@@ -194,7 +187,6 @@ li.dropdown:hover > .dropdown-menu {
     margin-bottom: 0px;
 }
 
-
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -232,7 +224,6 @@ li.dropdown:hover > .dropdown-menu {
 a .white {
     color: #fff !important;
 }
-
 
 /* ------- footer styles ---------------*/
 

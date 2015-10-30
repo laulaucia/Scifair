@@ -8,13 +8,10 @@ var userSchema = new Schema({
   passwordDigest: String,
   fairs: Array
 });
-
 userSchema.statics.createSecure = function (email, password, callback) {
   // `this` references our User model
   // store it in variable `UserModel` because `this` changes context in nested callbacks
-
   var UserModel = this;
-
   // hash password user enters at sign up
   bcrypt.genSalt(function (err, salt) {
     console.log('salt: ', salt);  // changes every time
@@ -29,7 +26,6 @@ userSchema.statics.createSecure = function (email, password, callback) {
     });
   });
 };
-
 
 // authenticate user (when user logs in)
 userSchema.statics.authenticate = function (email, password, callback) {

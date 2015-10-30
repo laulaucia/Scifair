@@ -11,20 +11,16 @@
         </button>
         <a class="navbar-brand white" href="./" >SCIFAIR SEARCH</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
         <ul class="nav navbar-nav">
           <li><a class="white" target="_blank" href="https://student.societyforscience.org/forms">SCIENCE FAIR RULES & FORMS</a></li>
         </ul>
-
         <ul class="nav navbar-nav navbar-right">
           <% if (user){%>
           <li><a class="white" href="./dashboard">DASHBOARD</a></li> 
           <li><a class="white" href="./logout">LOGOUT</a></li>
           <% } %> 
-
           <% if (!user){ %>  
           <li class="dropdown">
             <a href="#" class="dropdown-toggle white" data-toggle="dropdown">CREATE AN ACCOUNT OR LOGIN TO EDIT <b class="caret"></b></a>
@@ -34,12 +30,10 @@
               <form id="signup-form" action="/users" method="POST">
                 <input id="signup-email"  type="email" placeholder="EMAIL" name="email" required>
                 <input id="signup_password"  type="password" placeholder="PASSWORD" name="passwordDigest" required>
-
                 <div class="modal-footer">
                   <div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">CREATE</button>
                   </div>
-
                 </div>
               </form>
               <li  class=" white" >LOGIN TO EDIT FAIRS </li>
@@ -47,7 +41,6 @@
               <form id="login-form" action="/users" method="POST">
                 <input id="login_email"  type="email" placeholder="EMAIL" name="email"required>
                 <input id="login_password"  type="password" placeholder="PASSWORD" name="passwordDigest"required>
-
                 <div class="modal-footer">
                   <div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>

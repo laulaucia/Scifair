@@ -6,11 +6,8 @@ var express = require('express'),
   session = require('express-session'),
   request = require('request'),
   db = require('./models');
-
 require("dotenv").load();
-
-
-// middleware
+////////// middleware
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,13 +17,7 @@ app.use(session({
 	secret: process.env.FAIRSESSION,
   	cookie: { maxAge: 30 * 60 * 1000 }
 }));
-
-
-
-
 ////////////////////////////////// creating  a user /////////////////////////////////////
-
-
 app.post('/users', function (req, res) {
   console.log(req.body);
   db.User.createSecure(req.body.email, req.body.password, function (err, newUser) {
@@ -34,7 +25,6 @@ app.post('/users', function (req, res) {
     res.redirect('/dashboard');
   });
 });
-
 // authenticate the user and set the session
 app.post('/sessions', function (req, res) {
   // call authenticate function to check if password user entered is correct
@@ -49,47 +39,24 @@ app.post('/sessions', function (req, res) {
     }
   });
 });
-
-///////////////////SEARCHING my DB with API/search
-
-// THE FAIRS THAT COME OUT OF SEARCH!!  this was when i tried to overcomplicate things
-//var foundfairs = [];
-
-// search route for state and country
-// app.post('/search', function(req,res){
-//   console.log(req.body);
-//   db.Fair.find(req.body, function(err, fairs){
-//     if(err){
-//       console.log("we have an error");
-//     }
-//     console.log(fairs);
-//     res.render('map', {foundfairs: fairs, search: req.body });
-//   });
-// });
- 
+////////////// SEARCHING FOR A FAIR/////////////////////
 app.get('/api/search', function(req, res){
   console.log(req.query);
   db.Fair.find(req.query, function(err, fairs){
     if(err){
-      console.log("we have an error");
-    }
+      console.log("we have an error");}
     console.log(fairs);
     res.json(fairs);
-
   });
 });
-
-
-/////////////////////////////// login logout user stuff
-
+///////////////////LOGOUT////////////////////////
 app.get('/logout', function (req, res) {
   // remove the session user id
   req.session.userId = null;
   // redirect to main page (for now)
   res.redirect('/');
 });
-////////////////////////////////////////////route rendering///////////////////////////////////
-
+////////////////////////////ROUTES////////////////////////////////
 // home route rendering index
 app.get('/', function (req, res) {
   console.log('session user id: ', req.session.userId);
@@ -105,24 +72,7 @@ app.get('/', function (req, res) {
     }
   });
 });
-
-// // Route to map results page
-// app.get('/map', function(req, res){
-//   res.render('map');
-// });
-
-// app.post('/map', function(req, res){
-//   res.render('map');
-// });
-
-
-// // route to dashboard for editing
-// app.get('/dashboard', function (req, res) {
-//   res.render('dashboard', {currentuser: userloggedin});
-// });
-
-
-// show user dashboard page
+// LOGIN USER AND SHOW THEM THE DASHBOARD PAGE 
 app.get('/dashboard', function (req, res) {
   console.log('session user id: ', req.session.userId);
   // find the user currently logged in
@@ -137,7 +87,7 @@ app.get('/dashboard', function (req, res) {
     }
   });
 });
-
+//CREATING A NEW FAIR IN THE DASHBOARD
 app.post('/fairs', function(req, res){
   db.Fair.create(req.body, function(err, newfair){
     if (err)console.log(err);
@@ -145,7 +95,5 @@ app.post('/fairs', function(req, res){
     res.json(newfair);
   });
 });
-
-
 // listen on port 3000
 app.listen(process.env.PORT || 3000);

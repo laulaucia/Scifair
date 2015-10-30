@@ -1,12 +1,10 @@
 console.log('sanity check: client-side js loaded');
-
+/////DO SOME GOOGLE MAP THINGS
 var map;
 var markers = [];
 var startmap = {lat: 37.783, lng: -122.4167};
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var labelIndex = 0;
-
-
 var initMap = function(){
       map = new google.maps.Map(document.getElementById('map'), {
       center: startmap,
@@ -14,10 +12,10 @@ var initMap = function(){
       zoom: 4
       });
 };
-
+///////////LOAD WHEN THE DOCUMENT IS READY
 $(document).ready(function() {
 
-////this takes the information from the search form and querys the database 
+////THIS TAKES INPUT FROM THE SEARCH MODAL AND QUERYS THE DB 
   $('#search-form').on('submit', function(e){
     e.preventDefault();
     //make sure old querys dont stick around
@@ -43,7 +41,7 @@ $(document).ready(function() {
                position: coordinates,
                map: map,
                label: labels[labelIndex++ % foundfairs.length],
-               title: val.name,
+               title: val.fairId,
                animation: google.maps.Animation.DROP});
           //push to marker   
           markers.push(newMarker);
@@ -61,45 +59,36 @@ $(document).ready(function() {
     });  
   });
 
-
-/////////////// google map stuff ///////////
-
+/////////////// MORE GOOGLE MAP STUFF ///////////
+///RESET MAP AND INFO FOR A NEW SEARCH
 var reset = function(){
   $('#info').empty();
   deleteMarkers();
   labelIndex = 0;
-
 };
-
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(map);
   }
 }
-
 // Removes the markers from the map, but keeps them in the array.
 function clearMarkers() {
   setMapOnAll(null);
 }
-
 // Shows any markers currently in the array.
 function showMarkers() {
   setMapOnAll(map);
 }
-
 // Deletes all markers in the array by removing references to them.
 function deleteMarkers() {
   clearMarkers();
   markers = [];
 }
-
-
-/////////////////////////// user JS ///////////////////////////////
-
+/////////////////////////// USER JS ///////////////////////////////
+//SIGNING UP
   $('#signup-form').on('submit', function(e) {
     e.preventDefault();
-
     // select the form and serialize its data
     var signupData = $("#signup-form").serialize();
     console.log(signupData);
@@ -108,10 +97,9 @@ function deleteMarkers() {
       console.log(response);
     });
   });
-
+//LOGING IN
   $('#login-form').on('submit', function(e) {
     e.preventDefault();
-
     // select the form and serialize its data
     // note: this is the form because the event handler
     //   was triggered from the form
@@ -121,8 +109,7 @@ function deleteMarkers() {
       console.log(response);
     });
   });
-
-///////////////
+///ADDING A NEW FAIR FROM THE DASHBOARD
 $('#addafair').on('submit', function(e){
   e.preventDefault();
   var newfairfromform = $(this).serialize();
