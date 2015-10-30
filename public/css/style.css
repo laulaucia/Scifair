@@ -3,6 +3,7 @@
 input {
   border-radius: 5px;
   border: solid 1px #eee;
+  color: #444;
   
   
 }
@@ -27,7 +28,7 @@ h1 {
 }
 
 .dropdown-menu{
-    background-color: rgba(50,50,50, 0.3);
+    background-color: rgba(50,50,50, 0.5);
 }
 
 .addafair{
@@ -54,6 +55,8 @@ html, body {
     background-image: url(./NasaGalaxypic.png);
     color: #fff;
 }
+
+
 
  #map {
   position:static;

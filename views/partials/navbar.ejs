@@ -29,10 +29,11 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle white" data-toggle="dropdown">CREATE AN ACCOUNT OR LOGIN TO EDIT <b class="caret"></b></a>
             <ul class="dropdown-menu createuserform">
+              <li  class=" white" >CREATE AN ACCOUNT </li>
               <span class="createusertext">TYPE YOUR EMAIL & PASSWORD</span>
               <form id="signup-form" action="/users" method="POST">
                 <input id="signup-email"  type="email" placeholder="EMAIL" name="email" required>
-                <input id="signup_password"  type="password" placeholder="PASSWORD" name="password" required>
+                <input id="signup_password"  type="password" placeholder="PASSWORD" name="passwordDigest" required>
 
                 <div class="modal-footer">
                   <div>
@@ -41,11 +42,11 @@
 
                 </div>
               </form>
-              <li  class=" white" >LOGIN  </li>
+              <li  class=" white" >LOGIN TO EDIT FAIRS </li>
               <span class="logintext">TYPE YOUR EMAIL & PASSWORD</span>
               <form id="login-form" action="/users" method="POST">
                 <input id="login_email"  type="email" placeholder="EMAIL" name="email"required>
-                <input id="login_password"  type="password" placeholder="PASSWORD" name="password"required>
+                <input id="login_password"  type="password" placeholder="PASSWORD" name="passwordDigest"required>
 
                 <div class="modal-footer">
                   <div>
