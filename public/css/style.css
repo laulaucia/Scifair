@@ -1,11 +1,26 @@
 
+html, body { 
+    margin: 0;
+    padding: 0; 
+    color: #fff;
+}
+
+.jumbotron {
+    position: static;
+    background: #000 url(./NasaGalaxypic.png) center center;
+    max-width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+a:link{
+    color: orangered;
+}
 
 input {
   border-radius: 5px;
   border: solid 1px #eee;
-  color: #444;
-  
-  
+  color: #444; 
 }
 
 h1 {
@@ -41,28 +56,23 @@ h1 {
    background: transparent;
    border: none;
    color: #fff;
-
 }
+
+.navbar-fixed-bottom{
+    background:linear-gradient(top, transparent, #000);
+}
+
 li.dropdown:hover > .dropdown-menu {
     display: block;
     padding: 5px;
 }
-
-
-html, body { 
-    margin: 0;
-    padding: 0; 
-    background-image: url(./NasaGalaxypic.png);
-    color: #fff;
-}
-
-
+/* results rendering things */
 
  #map {
   position:static;
   height: 250px;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   border-radius: 20px;
   
   
@@ -71,12 +81,13 @@ html, body {
 .info {
     text-align: center;
     padding-bottom: 60px;
+    overflow: auto;
 }
 
 
 .main-row {
 
-    padding-bottom: 200px;
+    padding-bottom: 100px;
 }
 
 
@@ -196,8 +207,8 @@ html, body {
     color: #95a5a6;
 }
 
-.btn-link:hover, .btn-link:focus {
-    color: #2c3e50;
+.btn-lg:hover, .btn-lg:focus {
+    background: red;
     text-decoration: none;
 }
 
