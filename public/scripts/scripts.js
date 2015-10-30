@@ -12,49 +12,48 @@ var initMap = function(){
 };
 
 $(document).ready(function() {
- 
+
+////this takes the information from the search form and querys the database 
   $('#search-form').on('submit', function(e){
     e.preventDefault();
+    //make sure old querys dont stick around
     reset();
-
+    //turn search parameters into a string and send to fair API
     var serializedsearch = $('#search-form').serialize();
       $.getJSON( ('/api/search?'+serializedsearch), function( foundfairs ) {
+        //this array stores information to append to the HTML
         var items = [];
+        //takes away the text saying there is no search
         $('.col-md-4 p').empty();
-
+        if (foundfairs.length === 0){
+          $('#info').append("</br><p class='text-center'>I COULDN'T FIND ANY FAIRS THERE, </br>ARE YOU SURE YOU SPELLED EVERYTHING RIGHT?</p>");
+          $('#findafair').modal('hide');
+        }
+        else{
+        //loop though the found fairs and set map markers and write things to append to info
         $.each( foundfairs, function(key, val){ 
           items.push( "<li> <h5>"+ val.fairId +": <a target='_blank' href='" + val.website  + "'>" + val.name  + "</a></h5>" + val.city  +", "+ val.state  + "</br> "+ val.country  + "</br> Fair starts: "+ val.startDate + "</br> Affiliations: "+ val.affiliations +"</li>" );
           var coordinates = {lat:parseFloat(val.latitude), lng: parseFloat(val.longitude)};
-
+            //make a new google marker
             var newMarker = new google.maps.Marker({
                position: coordinates,
                map: map,
                title: val.name.toUpperCase,
                animation: google.maps.Animation.DROP});
+          //push to marker   
           markers.push(newMarker);
           map.panTo(newMarker.getPosition());
           setMapOnAll();
-          showMarkers();
-          
-        
+          showMarkers();          
       });
       $( "<ul/>", {
         "id": "foundfairs",
-        html: items.join( "" )
-    }).appendTo( "#info" );
-    
-    $('#findafair').modal('hide');
-
-
-
-      });
-            
-        
-        
-    
-});  
-
-});
+        html: items.join( "" )}).appendTo( "#info" );  
+      $('#findafair').modal('hide');
+      }
+      });  
+    });  
+  });
 
 
 /////////////// google map stuff ///////////
