@@ -3,6 +3,10 @@ console.log('sanity check: client-side js loaded');
 var map;
 var markers = [];
 var startmap = {lat: 37.783, lng: -122.4167};
+var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var labelIndex = 0;
+
+
 var initMap = function(){
       map = new google.maps.Map(document.getElementById('map'), {
       center: startmap,
@@ -26,7 +30,7 @@ $(document).ready(function() {
         //takes away the text saying there is no search
         $('.col-md-4 p').empty();
         if (foundfairs.length === 0){
-          $('#info').append("</br><p class='text-center'>I COULDN'T FIND ANY FAIRS THERE, </br>ARE YOU SURE YOU SPELLED EVERYTHING RIGHT?</p>");
+          $('#info').append("</br><p class='text-center'>I COULDN'T FIND ANY FAIRS THERE, </br>ARE YOU SURE YOU SPELLED EVERYTHING RIGHT?</br></br>   SADLY, NOT ALL STATES OR COUNTRIES HAVE FAIRS </br><a target='_blank' href='https://student.societyforscience.org/affiliated-fair-guidelines'>LEARN MORE ABOUT SSP AFFILIATED FAIRS</a> </p>");
           $('#findafair').modal('hide');
         }
         else{
@@ -38,7 +42,8 @@ $(document).ready(function() {
             var newMarker = new google.maps.Marker({
                position: coordinates,
                map: map,
-               title: val.name.toUpperCase,
+               label: labels[labelIndex++ % labels.length],
+               title: val.name,
                animation: google.maps.Animation.DROP});
           //push to marker   
           markers.push(newMarker);
@@ -46,8 +51,9 @@ $(document).ready(function() {
           setMapOnAll();
           showMarkers();          
       });
-      $( "<ul/>", {
+      $( "<ol/>", {
         "id": "foundfairs",
+        type: 'A',
         html: items.join( "" )}).appendTo( "#info" );  
       $('#findafair').modal('hide');
       }
@@ -61,6 +67,7 @@ $(document).ready(function() {
 var reset = function(){
   $('#info').empty();
   deleteMarkers();
+  var labelIndex = 0;
 
 };
 
