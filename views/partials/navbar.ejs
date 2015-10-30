@@ -27,7 +27,7 @@
 
           <% if (!user){ %>  
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle white" data-toggle="dropdown">CREATE AN ACCOUNT <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle white" data-toggle="dropdown">CREATE AN ACCOUNT OR LOGIN TO EDIT <b class="caret"></b></a>
             <ul class="dropdown-menu createuserform">
               <span class="createusertext">TYPE YOUR EMAIL & PASSWORD</span>
               <form id="signup-form" action="/users" method="POST">
@@ -41,13 +41,7 @@
 
                 </div>
               </form>
-            </ul>
-
-          </li>
-
-          <li class="dropdown usernameshow">
-            <a href="#" class="dropdown-toggle white" data-toggle="dropdown">LOGIN TO EDIT <b class="caret"></b></a>
-            <ul class="dropdown-menu loginform">
+              <li  class=" white" >LOGIN  </li>
               <span class="logintext">TYPE YOUR EMAIL & PASSWORD</span>
               <form id="login-form" action="/users" method="POST">
                 <input id="login_email"  type="email" placeholder="EMAIL" name="email"required>
