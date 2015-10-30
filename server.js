@@ -138,8 +138,8 @@ app.get('/dashboard', function (req, res) {
   });
 });
 
-app.post('fairs', function(req, res){
-  db.Fair.create(fair, function(err, newfair){
+app.post('/fairs', function(req, res){
+  db.Fair.create(req.body, function(err, newfair){
     if (err)console.log(err);
     console.log(newfair);
     res.json(newfair);

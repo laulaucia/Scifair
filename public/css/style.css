@@ -2,22 +2,23 @@
 
 input {
   border-radius: 5px;
-  border: solid 1px #fff;
+  border: solid 1px #eee;
   
   
 }
 
 h1 {
-     font-size: 3em;
+     font-size: 4.5em;
      text-align: center;
      padding-bottom: 10px;
-     font-family: 'Orbitron', sans-serif;
+     font-family: 'VT323', sans-serif;
+     color: #444;
 }
 
 .navbar-default .navbar-nav > li.dropdown:hover > a, 
 .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
 .navbar-default .navbar-nav > li.dropdown:hover > a:focus {
-    background-color: transparent;
+    background-color: #fff;
     color: rgb(85, 85, 85);
 }
 .addafair{
@@ -26,9 +27,9 @@ h1 {
 }
 
 .navbar{
-    background-image:linear-gradient(white, lightgrey);
-    border: none;
     width: 100%;
+   background: #fff;
+   border: none;
 
 }
 li.dropdown:hover > .dropdown-menu {
@@ -36,16 +37,12 @@ li.dropdown:hover > .dropdown-menu {
     padding: 5px;
 }
 
-.glow {
-  color: #444;
-    
-}
 
 html, body { 
     margin: 0;
     padding: 0; 
     background-image: white;
-    color: steelblue;
+    color: #444;
 }
 
  #map {
@@ -53,8 +50,7 @@ html, body {
   height: 250px;
   margin-top: 20px;
   margin-bottom: 50px;
-  border: solid grey 7px;
-  border-radius: 5px;
+  border-radius: 20px;
   
   
 }
@@ -113,43 +109,7 @@ html, body {
     transition: all ease-in-out 500ms;
 }
 
-#div-login-msg.success,
-#div-lost-msg.success,
-#div-register-msg.success {
-    
-    background-color: #c8f7c5;
-}
 
-#div-login-msg.error,
-#div-lost-msg.error,
-#div-register-msg.error {
-    
-    background-color: #ffcad1;
-}
-
-#icon-login-msg,
-#icon-lost-msg,
-#icon-register-msg {
-    width: 30px;
-    float: left;
-    line-height: 28px;
-    text-align: center;
-    background-color: #dadfe1;
-    margin-right: 5px;
-    transition: all ease-in-out 500ms;
-}
-
-#icon-login-msg.success,
-#icon-lost-msg.success,
-#icon-register-msg.success {
-    background-color: #68c3a3 !important;
-}
-
-#icon-login-msg.error,
-#icon-lost-msg.error,
-#icon-register-msg.error {
-    background-color: #eb575b !important;
-}
 
 #logintext{
      padding: 10px;
@@ -224,7 +184,8 @@ html, body {
 }
 
 .btn-lg, .btn-group-lg>.btn {
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #444;
     
 }
 
@@ -236,6 +197,7 @@ html, body {
 .btn-link:hover, .btn-link:focus {
     color: #2c3e50;
     text-decoration: none;
+
 }
 
 .glyphicon {
