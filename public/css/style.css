@@ -27,7 +27,7 @@ h1 {
 }
 
 .dropdown-menu{
-    background-color: rgba(200,200,200, 0.3);
+    background-color: rgba(50,50,50, 0.3);
 }
 
 .addafair{
@@ -172,9 +172,6 @@ html, body {
     margin-bottom: 0px;
 }
 
-.btn {
-    border-radius: 0px;
-}
 
 .btn:focus,
 .btn:active:focus,
@@ -189,7 +186,6 @@ html, body {
     border-radius: 5px;
     background-color: #444;
     border: none;
-    
 }
 
 .btn-link {
@@ -200,7 +196,6 @@ html, body {
 .btn-link:hover, .btn-link:focus {
     color: #2c3e50;
     text-decoration: none;
-
 }
 
 .close{
@@ -214,7 +209,6 @@ html, body {
 a .white {
     color: #fff !important;
 }
-
 
 
 /* ------- footer styles ---------------*/
