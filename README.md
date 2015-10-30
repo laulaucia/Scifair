@@ -15,7 +15,7 @@ Authentication, External API, & Data Validation
 
 User stories
 ----------------------
-Sally would like to find a science fair in her state to go to with her kids. Sally should be able to come to this site and search for her state and see all of the sciencefairs in her state rendered on a map.
+Sally would like to find a science fair in her state to go to with her kids. Sally should be able to come to this site and search for her state and see all of the science fairs in her state rendered on a map.
 Ira would like to find a science fair in her country and see it on a map.
 Joe would like to add his science fair to this list. He should be able to login and add his fair.
 
@@ -25,7 +25,7 @@ A few wireframes from early on
 
 Description:
 -------------
-Scifair is a simple search app to map all of the Intel ISEF and Broadcom MASTERS fairs on a map by state and or country. This map is something that, while at my previous employer, I would have really liked to be able to make! I took this oportunity to merge my past and present and make it a reality. A user can go to Scifair and search their state/country and find  a list of fairs they could attend or compete in as well as see them rendered on a map with corresponding markers. Each fair has some information that shows about it including its name, start date, and affiliations. Each fair is linked to the fair's website when a website was provided. A user can also login to add fairs at this time. 
+Scifair is a simple search app to map all of the Intel ISEF and Broadcom MASTERS fairs on a map by state and or country. This map is something that, while at my previous employer, I would have really liked to be able to make! I took this opportunity to merge my past and present and make it a reality. A user can go to Scifair and search their state/country and find  a list of fairs they could attend or compete in as well as see them rendered on a map with corresponding markers. Each fair has some information that shows about it including its name, start date, and affiliations. Each fair is linked to the fair's website when a website was provided. A user can also login to add fairs at this time. 
 
 ##APIs used
 * GoogleMaps API
