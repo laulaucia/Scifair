@@ -72,20 +72,24 @@ app.get('/', function (req, res) {
     }
   });
 });
-// LOGIN USER AND SHOW THEM THE DASHBOARD PAGE 
+// LOGIN USER AND SHOW THEM THE DASHBOARD PAGE
 app.get('/dashboard', function (req, res) {
   console.log('session user id: ', req.session.userId);
   // find the user currently logged in
-  db.User.findOne({_id: req.session.userId}, function (err, currentUser) {
-    if (err){
-      console.log('database error: ', err);
-      res.redirect('/');
-    } else {
-      // render profile template with user's data
-      console.log('loading profile of logged in user');
-      res.render('dashboard', {user: currentUser});
-    }
-  });
+  if (req.session.userId === undefined) {
+    res.redirect('/');
+  } else {
+    db.User.findOne({_id: req.session.userId}, function (err, currentUser) {
+      if (err){
+        console.log('database error: ', err);
+        res.redirect('/');
+      } else {
+        // render profile template with user's data
+        console.log('loading profile of logged in user');
+        res.render('dashboard', {user: currentUser});
+      }
+    });
+  }  
 });
 //CREATING A NEW FAIR IN THE DASHBOARD
 app.post('/fairs', function(req, res){
