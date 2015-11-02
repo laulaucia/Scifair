@@ -5,6 +5,10 @@
 	<% include ./partials/navbar.ejs %>
 	<div class="main-row">
 		<div id="addafair" class="col-sm-6 col-sm-offset-3">
+		<% if (!user){ %> 
+		YOU NEED TO LOGIN TO ADD A FAIR
+		<% } %> 
+		<% if (user){%>
 		<h3>CREATE A NEW FAIR</h3>
 		<form id="newFairform" action="/fairs" method="POST">
 			<label>FAIR ID</label>
@@ -32,6 +36,7 @@
 		        <button type="submit" class="btn btn-primary btn-lg btn-block" >CREATE A NEW FAIR</button>
 		    </div> 
 		    </form>
+		    <% } %>
 		</div>
 
 	</div>

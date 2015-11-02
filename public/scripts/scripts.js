@@ -97,7 +97,7 @@ function deleteMarkers() {
       console.log(response);
     });
   });
-//LOGING IN
+//LOGGING IN
   $('#login-form').on('submit', function(e) {
     e.preventDefault();
     // select the form and serialize its data
